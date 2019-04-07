@@ -63,14 +63,17 @@
 						<a href="#" class="txt1">
 							Forgot Username / Password?
 						</a>
-					</div>
-
-					<div class="text-center w-full">
+						<br><br>
+                                            
+                        <div class="text-center w-full">
 						<a class="txt1" href="Sign up.jsp">
 							Create new account
 							<i class="fa fa-long-arrow-right"></i>						
 						</a>
 					</div>
+					</div>
+
+					
 				</form>
 			</div>
 		</div>
