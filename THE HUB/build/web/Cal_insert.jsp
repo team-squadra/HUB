@@ -10,7 +10,7 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
+    <title>ADD EVENT</title>
 
     <!-- Icons font CSS-->
     <link href="Calender/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -64,14 +64,14 @@
                                 <div class="input-group">
                                     <label class="input--style-2">Starting Time</label>
                                     <input class="input--style-2" type="Time" placeholder="Starting Time" name="start_time">
-                                    <i class="fa fa-clock-o input-icon01 js-btn-calendar" aria-hidden="true"></i>
+                                  <!--  <i class="fa fa-clock-o input-icon01 js-btn-calendar" aria-hidden="true"></i> -->
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="input--style-2">Ending Time</label>
                                     <input class="input--style-2" type="Time" placeholder="Ending Time" name="end_time">
-                                    <i class="fa fa-clock-o input-icon01 js-btn-calendar" aria-hidden="true"></i>
+                                   <!-- <i class="fa fa-clock-o input-icon01 js-btn-calendar" aria-hidden="true"></i> -->
                                 </div>
                             </div>
                         </div>
@@ -99,7 +99,7 @@
     <script src="js/global.js"></script>
     <script src="js/global01.js"></script>
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 
 </html>
 <!-- end document-->

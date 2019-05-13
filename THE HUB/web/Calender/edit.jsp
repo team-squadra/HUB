@@ -40,7 +40,7 @@
         </style>
     </head>
     <body> 
-        <!-- 
+        
         <%
             String id = (String) request.getParameter("id");
             Edit_values obj_Edit_values = new Edit_values();
@@ -61,7 +61,7 @@
                 </form>
             </div>
         </center>
-        -->
+        
 
 
 

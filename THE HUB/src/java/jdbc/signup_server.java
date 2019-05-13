@@ -84,18 +84,20 @@ public class signup_server extends HttpServlet {
             String password = request.getParameter("password");
             String email = request.getParameter("email");
             String repassword = request.getParameter("repassword");
+            String type = request.getParameter("type");
             if (password.equals(repassword)) {
-                String sql = "insert into login (username,password,email) values(?,?,?)";
+                String sql = "insert into login (username,password,email,type) values(?,?,?,?)";
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hub", "root", "");
                 PreparedStatement ps = conn.prepareStatement(sql);
                 ps.setString(1, username);
                 ps.setString(2, password);
                 ps.setString(3, email);
+                ps.setString(4, type);
                 ps.executeUpdate();
                 out.println("<script type=\"text/javascript\">");
                 out.println("alert('sucess!!');");
-                out.println("location='Sign in.jsp';");
+                out.println("location='signin.jsp';");
                 out.println("</script>");
             }
             else{

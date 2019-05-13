@@ -422,11 +422,12 @@ iframe {
   display: block;
   width: 100%;
   background: #fff;
-  height: 50px;
+  height: 110px;
   border-radius: 25px;
   padding: 0 20px;
  
 }
+
 /* Style the active class, and buttons on mouse-over */
 .active, .btn:focus {
   background-color: #85C340;

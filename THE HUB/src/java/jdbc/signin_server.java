@@ -104,7 +104,7 @@ public class signin_server extends HttpServlet {
             else {
                 out.println("<script type=\"text/javascript\">");
                 out.println("alert('Username Or Password is wrong !!');");
-                out.println("location='login/signin.jsp';");
+                out.println("location='index.jsp';");
                 out.println("</script>");
             }
 

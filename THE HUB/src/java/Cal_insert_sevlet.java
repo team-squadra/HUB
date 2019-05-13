@@ -116,7 +116,7 @@ public class Cal_insert_sevlet extends HttpServlet {
             try {
                 String sql = "insert into events (title,start_event,end_event,description) values(?,?,?,?)";
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testing", "root", "");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hub", "root", "");
                 PreparedStatement ps = conn.prepareStatement(sql);
                 ps.setString(1, eventname);
                 ps.setString(2, start_event);
