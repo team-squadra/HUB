@@ -4,6 +4,12 @@
     Author     : Hishan Kavishka
 --%>
 
+<%@page import="java.text.DateFormat"%>
+<%@page import="java.util.Locale"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.util.Date"%>
 <%@page import="CRUD.Edit_values"%>
 <%@page import="common.User_Bean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -18,18 +24,33 @@
         <%
             String id = request.getParameter("id");
             String title = request.getParameter("title");
-            String start_event = request.getParameter("start_event");
-            String end_event = request.getParameter("end_event");
+
+            String start_date = request.getParameter("start_date");
+            String end_date = request.getParameter("end_date");
+            String start_time = request.getParameter("start_time");
+            String end_time = request.getParameter("end_time");
+
+            Date date = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH).parse(start_date);
+            DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+            start_date = formatter.format(date.getTime());
+
+            Date date1 = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH).parse(end_date);
+            DateFormat formatter1 = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+            end_date = formatter1.format(date1.getTime());
+            
+            String start_event = start_date +" "+ start_time;
+            String end_event = end_date +" "+ end_time;
+   
             String description = request.getParameter("description");
-            
+
             User_Bean obj_User_Bean = new User_Bean();
-            
-            obj_User_Bean.setid(id); 
+
+            obj_User_Bean.setid(id);
             obj_User_Bean.settitle(title);
             obj_User_Bean.setstart_event(start_event);
             obj_User_Bean.setend_event(end_event);
             obj_User_Bean.setdescription(description);
-            
+
             Edit_values obj_Edit_values = new Edit_values();
             obj_Edit_values.edit_user(obj_User_Bean);
         %>

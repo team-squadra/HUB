@@ -4,6 +4,10 @@
     Author     : Hishan Kavishka
 --%>
 
+<%@page import="java.util.Locale"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.text.DateFormat"%>
+<%@page import="java.util.Date"%>
 <%@page import="CRUD.Edit_values"%>
 <%@page import="common.User_Bean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -19,7 +23,7 @@
         <meta name="keywords" content="Colorlib Templates">
 
         <!-- Title Page-->
-        <title>Au Register Forms by Colorlib</title>
+        <title>Edit Event</title>
 
         <!-- Icons font CSS-->
         <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -40,32 +44,34 @@
         </style>
     </head>
     <body> 
-        
+
         <%
             String id = (String) request.getParameter("id");
             Edit_values obj_Edit_values = new Edit_values();
             User_Bean obj_User_Bean = obj_Edit_values.get_value_of_user(id);
         %>
-       <center>
-            <h1>Edit Values</h1>
-            <div class="page-wrapper bg-blue p-t-180 p-b-100 font-robo">
-                <form action="edit_controller.jsp">
 
-                    Event ID No :<input type="text" name="id" value="<%=id%>"><br>
-                    Event Name :<input type="text" name="title" value="<%=obj_User_Bean.gettitle()%>"><br>
-                    Starting Time:<input type="text" name="start_event" value="<%=obj_User_Bean.getstart_event()%>"><br>
-                    Ending Time:<input type="text" name="end_event" value="<%=obj_User_Bean.getend_event()%>"><br>
-                    Description<input type="text" name="description" value="<%=obj_User_Bean.getdescription()%>"><br>
+        <%
+            //Start Event Split
+            String start_event = obj_User_Bean.getstart_event();
+            String[] start_parts = start_event.split(" ");
+            String start_date = start_parts[0];
+            String start_time = start_parts[1];
 
-                    <input type="submit" value="Edit">
-                </form>
-            </div>
-        </center>
-        
+            //End Event Split
+            String end_event = obj_User_Bean.getstart_event();
+            String[] end_parts = end_event.split(" ");
+            String end_date = end_parts[0];
+            String end_time = end_parts[1];
 
+            Date date = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).parse(start_date);
+            DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+            start_date = formatter.format(date.getTime());
 
-
-
+            Date date1 = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).parse(end_date);
+            DateFormat formatter1 = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+            end_date = formatter1.format(date.getTime());
+        %>
         <div class="page-wrapper bg-blue p-t-180 p-b-100 font-robo">
             <div class="wrapper wrapper--w960">
                 <div class="card card-2">
@@ -80,15 +86,7 @@
                             </div>
                             <div class="input-group">
                                 <input class="input--style-2" type="text" name="title" value="<%=obj_User_Bean.gettitle()%>">
-                            </div>
-
-                            <div class="input-group">
-                                <input class="input--style-2" type="text" name="start_event" value="<%=obj_User_Bean.getstart_event()%>">
-                            </div>
-                            <div class="input-group">
-                                <input class="input--style-2" type="text" name="end_event" value="<%=obj_User_Bean.getend_event()%>">
-                            </div>
-
+                            </div>  
                             <div class="input-group">
                                 <input class="input--style-2" type="text" placeholder="Type a Discription about the Event Here" name="description" value="<%=obj_User_Bean.getdescription()%>">
                             </div>
@@ -98,13 +96,15 @@
                             <div class="row row-space">
                                 <div class="col-2">
                                     <div class="input-group">
-                                        <input class="input--style-2 js-datepicker" type="text" placeholder="Starting Date" name="start_date">
+                                        <label class="input--style-2">Starting Date</label>
+                                        <input class="input--style-2 js-datepicker" type="text" placeholder="Starting Date" name="start_date" value="<%=start_date%>">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <div class="input-group">
-                                        <input class="input--style-2 js-datepicker" type="text" placeholder="Ending Date" name="end_date">
+                                        <label class="input--style-2">Ending Date</label>
+                                        <input class="input--style-2 js-datepicker" type="text" placeholder="Ending Date" name="end_date" value="<%=end_date%>">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
@@ -118,13 +118,13 @@
                                 <div class="col-2">
                                     <div class="input-group">
                                         <label class="input--style-2">Starting Time</label>
-                                        <input class="input--style-2" type="Time" placeholder="Starting Time" name="start_time">
+                                        <input class="input--style-2" type="Time" placeholder="Starting Time" name="start_time" value="<%=start_time%>">
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <div class="input-group">
                                         <label class="input--style-2">Ending Time</label>
-                                        <input class="input--style-2" type="Time" placeholder="Ending Time" name="end_time">
+                                        <input class="input--style-2" type="Time" placeholder="Ending Time" name="end_time" value="<%=end_time%>">
                                     </div>
                                 </div>
                             </div>
