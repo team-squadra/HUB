@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-
+import common.DB_Connection;
 import java.io.IOException;
 import java.io.PrintWriter;
 import static java.lang.System.out;
@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author ______KaviYa______
+ * @author Hishan Kavishka
  */
 @WebServlet(name = "Cal_insert_sevlet", urlPatterns = {"/Cal_insert_sevlet"})
 public class Cal_insert_sevlet extends HttpServlet {
@@ -109,15 +109,17 @@ public class Cal_insert_sevlet extends HttpServlet {
                 e.printStackTrace();
             }
 
-            String start_event = start_date +" "+ start_time;
-            String end_event = end_date +" "+ end_time;
+            String start_event = start_date + " " + start_time;
+            String end_event = end_date + " " + end_time;
 
-
+            DB_Connection obj_DB_Connection = new DB_Connection();
+            Connection connection = obj_DB_Connection.get_connection();
+            PreparedStatement ps = null;
+            
             try {
                 String sql = "insert into events (title,start_event,end_event,description) values(?,?,?,?)";
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hub", "root", "");
-                PreparedStatement ps = conn.prepareStatement(sql);
+                ps = connection.prepareStatement(sql);
                 ps.setString(1, eventname);
                 ps.setString(2, start_event);
                 ps.setString(3, end_event);
@@ -129,11 +131,11 @@ public class Cal_insert_sevlet extends HttpServlet {
                 out.println("</script>");
             } catch (SQLException ex) {
                 out.println(ex);
-            } 
+            }
 
         } catch (ClassNotFoundException ex) {
             out.println(ex);
-        } 
+        }
 
     }
 

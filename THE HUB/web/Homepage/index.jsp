@@ -1,3 +1,7 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="common.User_Bean"%>
+<%@page import="java.util.List"%>
+<%@page import="CRUD.Read_Values"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -102,7 +106,7 @@
                   <li><a href="news.html">News</a></li>
                 </ul>
               </li>
-              <li><a href="../login/signin.jsp">Login</a></li>
+              <li><a href="../signin.jsp">Login</a></li>
             </ul>
           </div>
         </div>
@@ -329,55 +333,47 @@
                       <p><a href="#" class="btn btn-primary">View all news</a></p>  
                     </div>
                   </div>
-                </div>
+                </div>                               
+                  
                 <div id="upcoming-events" class="tab-pane fade">
                   <div class="row">
                     <div class="col-md-12">
                       <div class="owl-carousel" id="owl2">
+                          
+                        <%
+                            Read_Values obj_Read_Values = new Read_Values();
+                            List<User_Bean> list = obj_Read_Values.get_values();
+                            Iterator<User_Bean> it_list = list.iterator();
+
+                        %> 
+                        <%
+                              while (it_list.hasNext()) {
+                                 User_Bean obj_User_Bean = new User_Bean();
+                                 obj_User_Bean = it_list.next();
+                                 
+                            //Start Event DATE TIME Split
+                            String start_event = obj_User_Bean.getstart_event();
+                            String[] start_parts = start_event.split(" ");
+                            String start_date = start_parts[0];
+                            String start_time = start_parts[1];
+                        %>
+                          
                         <div class="item">
                           <a href="#" class="probootstrap-featured-news-box">
                             <figure class="probootstrap-media"><img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
                             <div class="probootstrap-text">
-                              <h3>Tempora consectetur unde nisi</h3>
-                              <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                              <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span>
+                              <h3><%=obj_User_Bean.gettitle()%></h3>
+                              <span class="probootstrap-date"><i class="icon-calendar"></i><%=start_date%></span>
+                              <span class="probootstrap-location"><i class="icon-location2"></i><%=obj_User_Bean.getdescription()%></span>
                             </div>
                           </a>
                         </div>
+                        
+                        <%
+                            }
+                        %> 
                         <!-- END item -->
-                        <div class="item">
-                          <a href="#" class="probootstrap-featured-news-box">
-                            <figure class="probootstrap-media"><img src="img/img_sm_1.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
-                            <div class="probootstrap-text">
-                              <h3>Tempora consectetur unde nisi</h3>
-                              <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                              <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span>
-                            </div>
-                          </a>
-                        </div>
-                        <!-- END item -->
-                        <div class="item">
-                          <a href="#" class="probootstrap-featured-news-box">
-                            <figure class="probootstrap-media"><img src="img/img_sm_2.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
-                            <div class="probootstrap-text">
-                              <h3>Tempora consectetur unde nisi</h3>
-                              <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                              <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span>
-                            </div>
-                          </a>
-                        </div>
-                        <!-- END item -->
-                        <div class="item">
-                          <a href="#" class="probootstrap-featured-news-box">
-                            <figure class="probootstrap-media"><img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
-                            <div class="probootstrap-text">
-                              <h3>Tempora consectetur unde nisi</h3>
-                              <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                              <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span>
-                            </div>
-                          </a>
-                        </div>
-                        <!-- END item -->
+                        
                       </div>
                     </div>
                   </div>
