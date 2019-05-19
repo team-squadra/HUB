@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>uiCookies:Enlight &mdash; Free Bootstrap Theme, Free Responsive Bootstrap Website Template</title>
+    <title>The Hub</title>
     <meta name="description" content="Free Bootstrap Theme by uicookies.com">
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
     
@@ -16,6 +16,13 @@
       <script src="js/vendor/html5shiv.min.js"></script>
       <script src="js/vendor/respond.min.js"></script>
     <![endif]-->
+    <style>
+    #home_name{
+        font-size: 40px;
+        font-weight: bold;
+        padding: 10px;
+      }
+      </style>
   </head>
   <body>
 
@@ -33,9 +40,9 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-9 col-md-9 col-sm-9 probootstrap-top-quick-contact-info">
-              <span><i class="icon-location2"></i>Brooklyn, NY 10036, United States</span>
+              <span><i class="icon-location2"></i>Next Generation Colloboration</span>
               <span><i class="icon-phone2"></i>+1-123-456-7890</span>
-              <span><i class="icon-mail"></i>info@uicookies.com</span>
+              <span><i class="icon-mail"></i>info@thehub.com</span>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 probootstrap-top-social">
               <ul>
@@ -61,35 +68,43 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html" title="uiCookies:Enlight">Enlight</a>
+            <br>
+            <a id="home_name" class="probootstrap-heading probootstrap-animate" href="index.jsp" title="HOME PAGE">THE HUB</a>
           </div>
 
           <div id="navbar-collapse" class="navbar-collapse collapse">
+          
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="index.html">Home</a></li>
-              <li class="active"><a href="courses.html">Courses</a></li>
-              <li><a href="teachers.html">Teachers</a></li>
-              <li><a href="events.html">Events</a></li>
+              <li><a href="index.jsp">Home</a></li>
+              <li class="active"><a href="industry.jsp">Industry</a></li>
+              <li><a href="university.jsp">University</a></li>
+              <li><a href="students.jsp">Students</a></li>
               <li class="dropdown">
-                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Pages</a>
+
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle"> More Pages</a>
                 <ul class="dropdown-menu">
-                  <li><a href="about.html">About Us</a></li>
+
+                <li class="dropdown-submenu dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Academic calenders</span></a>
+                    <ul class="dropdown-menu">
+
+                      <li><a href="..\Cal_insert.jsp">Add An Event</a></li>
+                      <li><a href="http://localhost/calender/index.php">View Calender</a></li>
+                      <li><a href="..\Calender\Cal_edit_delete.jsp">Edit Or Delete Events</a></li>
+                      <li><a href="#">Second Level Menu</a></li>
+
+                    </ul>
+                  </li>
+
                   <li><a href="courses.html">Courses</a></li>
                   <li><a href="course-single.html">Course Single</a></li>
                   <li><a href="gallery.html">Gallery</a></li>
-                  <li class="dropdown-submenu dropdown">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Sub Menu</span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Second Level Menu</a></li>
-                      <li><a href="#">Second Level Menu</a></li>
-                      <li><a href="#">Second Level Menu</a></li>
-                      <li><a href="#">Second Level Menu</a></li>
-                    </ul>
-                  </li>
                   <li><a href="news.html">News</a></li>
+                  <li><a href="about.html">About Us</a></li>
+                  
                 </ul>
               </li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="../signin.jsp">Login</a></li>
             </ul>
           </div>
         </div>

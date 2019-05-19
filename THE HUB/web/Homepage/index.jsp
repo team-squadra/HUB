@@ -49,9 +49,9 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-9 col-md-9 col-sm-9 probootstrap-top-quick-contact-info">
-              <span><i class="icon-location2"></i>Brooklyn, NY 10036, United States</span>
+              <span><i class="icon-location2"></i>Next Generation Colloboration</span>
               <span><i class="icon-phone2"></i>+1-123-456-7890</span>
-              <span><i class="icon-mail"></i>info@uicookies.com</span>
+              <span><i class="icon-mail"></i>info@thehub.com</span>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 probootstrap-top-social">
               <ul>
@@ -78,32 +78,38 @@
               <span class="icon-bar"></span>
             </button>
             <br>
-            <a id="home_name" class="probootstrap-heading probootstrap-animate" href="index.html" title="HOME PAGE">THE HUB</a>
+            <a id="home_name" class="probootstrap-heading probootstrap-animate" href="index.jsp" title="HOME PAGE">THE HUB</a>
           </div>
 
           <div id="navbar-collapse" class="navbar-collapse collapse">
+          
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="index.html">Home</a></li>
-              <li><a href="courses.html">Industry</a></li>
-              <li><a href="teachers.html">University</a></li>
-              <li><a href="events.html">Students</a></li>
+              <li class="active"><a href="index.jsp">Home</a></li>
+              <li><a href="industry.jsp">Industry</a></li>
+              <li><a href="university.jsp">University</a></li>
+              <li><a href="students.jsp">Students</a></li>
               <li class="dropdown">
-                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Pages</a>
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">More Pages</a>
                 <ul class="dropdown-menu">
-                  <li><a href="about.html">About Us</a></li>
+                <li class="dropdown-submenu dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Academic calenders</span></a>
+                    <ul class="dropdown-menu">
+
+                      <li><a href="..\Cal_insert.jsp">Add An Event</a></li>
+                      <li><a href="http://localhost/calender/index.php">View Calender</a></li>
+                      <li><a href="..\Calender\Cal_edit_delete.jsp">Edit Or Delete Events</a></li>
+                      <li><a href="#">Second Level Menu</a></li>
+
+                    </ul>
+                  </li>
+                  
                   <li><a href="courses.html">Courses</a></li>
                   <li><a href="course-single.html">Course Single</a></li>
                   <li><a href="gallery.html">Gallery</a></li>
-                  <li class="dropdown-submenu dropdown">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Sub Menu</span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Second Level Menu</a></li>
-                      <li><a href="#">Second Level Menu</a></li>
-                      <li><a href="#">Second Level Menu</a></li>
-                      <li><a href="#">Second Level Menu</a></li>
-                    </ul>
-                  </li>
                   <li><a href="news.html">News</a></li>
+                  <li><a href="about.html">About Us</a></li>
+                  
+                  
                 </ul>
               </li>
               <li><a href="../signin.jsp">Login</a></li>
@@ -175,7 +181,7 @@
                 <div class="probootstrap-text probootstrap-animate">
                   <h3>About HUB</h3>
                   <p>Our main target is to colloboration between industries , universities and the students. In here you can share your events,workshops,academic calenders,queries with these three parties. A strong collaboration can do lot more than this. <b>Haven't an account in HUB yet ?? </b></p>
-                  <p><a href="../login/Sign up.jsp" class="btn btn-primary">Get you registered</a></p>
+                  <p><a href="../Sign up.jsp" class="btn btn-primary">Get you registered</a></p>
                 </div>
                 <div class="probootstrap-image probootstrap-animate" style="background-image: url(img/slider_4.jpg)">
                   <a href="https://vimeo.com/45830194" class="btn-video popup-vimeo"><i class="icon-play3"></i></a>
@@ -252,14 +258,14 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-center section-heading probootstrap-animate">
-              <h2 class="mb0">Highlights</h2>
+              <h2 class="mb0"><b>Highlights</b></h2>
             </div>
           </div>
         </div>
         <div class="probootstrap-tab-style-1">
           <ul class="nav nav-tabs probootstrap-center probootstrap-tabs no-border">
-            <li class="active"><a data-toggle="tab" href="#featured-news">Featured News</a></li>
-            <li><a data-toggle="tab" href="#upcoming-events">Upcoming Events</a></li>
+            <li class="active"><a data-toggle="tab" href="#featured-news">Upcoming Industry Events</a></li>
+            <li><a data-toggle="tab" href="#upcoming-events">Upcoming University Events</a></li>
           </ul>
         </div>
       </section>
