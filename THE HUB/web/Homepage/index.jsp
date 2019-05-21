@@ -401,8 +401,8 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
-              <h2>Our Featured Courses</h2>
-              <p class="lead">Sed a repudiandae impedit voluptate nam Deleniti dignissimos perspiciatis nostrum porro nesciunt</p>
+              <h2>SOME SCENARIOS</h2>
+              <p class="lead">Here are some problem scenarios to be solved which are uploaded by some of our industry partners</p>
             </div>
           </div>
           <!-- END row -->
@@ -418,7 +418,7 @@
                   <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span>
                   <h3>Application Design</h3>
                   <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                  <p><a href="#" class="btn btn-primary">Enroll now</a> <span class="enrolled-count">2,928 students enrolled</span></p>
+                  <p><a href="#" class="btn btn-primary">Explore More</a> <span class="enrolled-count">2,928 students enrolled</span></p>
                 </div>
               </div>
 
@@ -432,7 +432,7 @@
                   <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span>
                   <h3>Chemical Engineering</h3>
                   <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                  <p><a href="#" class="btn btn-primary">Enroll now</a> <span class="enrolled-count">7,202 students enrolled</span></p>
+                  <p><a href="#" class="btn btn-primary">Explore More</a> <span class="enrolled-count">7,202 students enrolled</span></p>
                 </div>
               </div>
 
@@ -448,7 +448,7 @@
                   <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span>
                   <h3>Math Major</h3>
                   <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                  <p><a href="#" class="btn btn-primary">Enroll now</a> <span class="enrolled-count">12,582 students enrolled</span></p>
+                  <p><a href="#" class="btn btn-primary">Explore More</a> <span class="enrolled-count">12,582 students enrolled</span></p>
                 </div>
               </div>
 
@@ -462,7 +462,7 @@
                   <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span>
                   <h3>English Major</h3>
                   <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                  <p><a href="#" class="btn btn-primary">Enroll now</a> <span class="enrolled-count">9,582 students enrolled</span></p>
+                  <p><a href="#" class="btn btn-primary">Explore More</a> <span class="enrolled-count">9,582 students enrolled</span></p>
                 </div>
               </div>
 

@@ -1,3 +1,7 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="common.user_bean2"%>
+<%@page import="java.util.List"%>
+<%@page import="CRUD.read_industry_values"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -114,7 +118,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-left section-heading probootstrap-animate">
-              <h1>Our Courses</h1>
+              <h1>OUR INDUSTRY PARTNERS</h1>
             </div>
           </div>
         </div>
@@ -126,7 +130,7 @@
             <div class="col-md-12">
               <div class="probootstrap-flex-block">
                 <div class="probootstrap-text probootstrap-animate">
-                  <div class="text-uppercase probootstrap-uppercase">Featured Course</div>
+                  <div class="text-uppercase probootstrap-uppercase">Featured INDUSTRY NEWS</div>
                   <h3>Chemical Engineering</h3>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo veniam labore ratione illo vero voluptate a deserunt incidunt odio aliquam commodi blanditiis voluptas error non rerum temporibus optio accusantium!</p>
                   <p><a href="#" class="btn btn-primary">Enroll now</a> <span class="enrolled-count">2,928 students enrolled</span></p>
@@ -139,9 +143,21 @@
           </div>
         </div>
       </section>
+              
 
       <section class="probootstrap-section">
-        <div class="container">
+              <%
+                read_industry_values obj_read_industry_values = new read_industry_values();
+                List<user_bean2> list = obj_read_industry_values.get_industry_values();
+                Iterator<user_bean2> it_list = list.iterator();
+
+              %> 
+              <%
+                while (it_list.hasNext()) {
+                 user_bean2 obj_user_bean2 = new user_bean2();
+                 obj_user_bean2 = it_list.next();
+              %>
+        <div class="container"> 
           <div class="row">
             <div class="col-md-6">
               <div class="probootstrap-service-2 probootstrap-animate">
@@ -152,13 +168,17 @@
                 </div>
                 <div class="text">
                   <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span>
-                  <h3>Application Design</h3>
-                  <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                  <p><a href="#" class="btn btn-primary">Enroll now</a> <span class="enrolled-count">2,928 students enrolled</span></p>
+                  <h3><b><%=obj_user_bean2.get_industry_name()%></b></h3>
+                  <p><%=obj_user_bean2.get_idiscription()%></p>
+                  <p><a href="#" class="btn btn-primary">Visit Page</a> <span class="enrolled-count"><%=obj_user_bean2.get_emp_count()%> Employees</span></p>
                 </div>
               </div>
+                
+               
+                 
 
-              <div class="probootstrap-service-2 probootstrap-animate">
+
+              <%-- <div class="probootstrap-service-2 probootstrap-animate">
                 <div class="image">
                   <div class="image-bg">
                     <img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by uicookies.com">
@@ -172,8 +192,8 @@
                 </div>
               </div>
 
-            </div>
-            <div class="col-md-6">
+            </div> --%>
+            <%-- <div class="col-md-6">
               <div class="probootstrap-service-2 probootstrap-animate">
                 <div class="image">
                   <div class="image-bg">
@@ -263,13 +283,18 @@
                   <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
                   <p><a href="#" class="btn btn-primary">Enroll now</a> <span class="enrolled-count">9,582 students enrolled</span></p>
                 </div>
-              </div>
+              </div> --%>
+            
+             <%
+                     }
+                 %> 
 
             </div>
           </div>
         </div>
       </section>
 
+               
       
       
       <section class="probootstrap-section">
