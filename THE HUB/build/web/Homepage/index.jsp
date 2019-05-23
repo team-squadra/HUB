@@ -299,7 +299,7 @@
                             //String start_event = obj_industry_events.getstart_event();
                             //String[] start_parts = start_event.split(" ");
                             //String start_date = start_parts[0];
-                            //String start_time = start_parts[1];
+                            //String start_time = start_parts[1];    
                         %>
                         
                         <div class="item">
