@@ -1,7 +1,9 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="common.User_Bean"%>
+<%@page import="common.industry_events_bean"%>
 <%@page import="java.util.List"%>
 <%@page import="CRUD.Read_Values"%>
+<%@page import="CRUD.industry_events"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -281,13 +283,32 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="owl-carousel" id="owl1">
+                          
+                          <%
+                            //industry_events obj_industry_events = new industry_events();
+                            //List<industry_events_bean> list = obj_industry_events.get_com_events();
+                            //Iterator<industry_events_bean> it_list = list.iterator();
+
+                        %> 
+                        <%
+                              //while (it_list.hasNext()) {
+                                 //industry_events_bean obj_industry_events = new industry_events_bean();
+                                 //obj_industry_events = it_list.next();
+                                 
+                            //Start Event DATE TIME Split
+                            //String start_event = obj_industry_events.getstart_event();
+                            //String[] start_parts = start_event.split(" ");
+                            //String start_date = start_parts[0];
+                            //String start_time = start_parts[1];
+                        %>
+                        
                         <div class="item">
                           <a href="#" class="probootstrap-featured-news-box">
                             <figure class="probootstrap-media"><img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
                             <div class="probootstrap-text">
-                              <h3>Tempora consectetur unde nisi</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, ut.</p>
-                              <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
+                              <h3></h3>
+                              <p></p>
+                              <span class="probootstrap-date"><i class="icon-calendar"></i></span>
                               
                             </div>
                           </a>

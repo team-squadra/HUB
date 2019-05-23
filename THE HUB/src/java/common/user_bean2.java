@@ -14,6 +14,7 @@ public class user_bean2 {
     private String industry_name;
     private String idiscription;
     private String emp_count;
+    private String com_pic;
     
     public String get_industry_id(){
         return id;
@@ -39,5 +40,10 @@ public class user_bean2 {
     public void set_emp_count(String emp_count){
         this.emp_count = emp_count;
     }
-    
+    public String get_com_pic(){
+        return emp_count;
+    }
+    public void set_com_pic(String com_pic){
+        this.com_pic = com_pic;
+    }
 }

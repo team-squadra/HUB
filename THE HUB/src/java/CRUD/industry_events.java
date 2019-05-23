@@ -10,9 +10,15 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import common.DB_Connection;
-import common.User_Bean;
-public class Read_Values {
-public List get_values(){
+import common.industry_events_bean;
+
+/**
+ *
+ * @author Sudesh Fernandezz
+ */
+public class industry_events {
+    
+    public List get_com_events(){
 	DB_Connection obj_DB_Connection=new DB_Connection();
 	Connection connection=obj_DB_Connection.get_connection();
 	PreparedStatement ps=null;
@@ -23,20 +29,20 @@ public List get_values(){
 	ps=connection.prepareStatement(querry);		
 	rs=ps.executeQuery();
 	while(rs.next()){
-	  User_Bean obj_User_Bean=new User_Bean();
+	  industry_events_bean obj_industry_events=new industry_events_bean();
 	  System.out.println(rs.getString("id"));
 	  System.out.println(rs.getString("title"));
 	  System.out.println(rs.getString("start_event"));
 	  System.out.println(rs.getString("end_event"));
           System.out.println(rs.getString("description"));
           
-	  obj_User_Bean.setid(rs.getString("id"));
-          obj_User_Bean.settitle(rs.getString("title"));
-	  obj_User_Bean.setstart_event(rs.getString("start_event"));
-	  obj_User_Bean.setend_event(rs.getString("end_event"));
-          obj_User_Bean.setdescription(rs.getString("description"));
+	  obj_industry_events.setid(rs.getString("id"));
+          obj_industry_events.settitle(rs.getString("title"));
+	  obj_industry_events.setstart_event(rs.getString("start_event"));
+	  obj_industry_events.setend_event(rs.getString("end_event"));
+          obj_industry_events.setdescription(rs.getString("description"));
           
-	list.add(obj_User_Bean);
+	list.add(obj_industry_events);
 	}
 	} catch (Exception e) {
 	System.out.println(e);

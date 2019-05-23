@@ -34,12 +34,14 @@ public class read_industry_values {
 	  System.out.println(rs.getString("id"));
 	  System.out.println(rs.getString("industry_name"));
 	  System.out.println(rs.getString("description"));
-	  System.out.println(rs.getString("emp_count"));
+		System.out.println(rs.getString("emp_count"));
+		System.out.println(rs.getString("com_pic"));
           
 	  obj_user_bean2.set_industry_id(rs.getString("id"));
           obj_user_bean2.set_industry_name(rs.getString("industry_name"));
 	  obj_user_bean2.set_idiscription(rs.getString("description"));
-	  obj_user_bean2.set_emp_count(rs.getString("emp_count"));
+		obj_user_bean2.set_emp_count(rs.getString("emp_count"));
+		obj_user_bean2.set_com_pic(rs.getString("com_pic"));
           
 	list.add(obj_user_bean2);
 	}
