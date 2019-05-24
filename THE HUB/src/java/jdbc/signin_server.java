@@ -5,6 +5,7 @@
  */
 package jdbc;
 
+import common.DB_Connection;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -100,8 +101,26 @@ public class signin_server extends HttpServlet {
                 out.println("<script type=\"text/javascript\">");
                 out.println("location='index.jsp';");
                 out.println("</script>");
-            } 
-            else {
+
+                DB_Connection obj_DB_Connection = new DB_Connection();
+                Connection connection = obj_DB_Connection.get_connection();
+                PreparedStatement ps2 = null;
+                try {
+                    String querry = "INSERT INTO current_user set id=3,username=?,type=?";
+                    ps2 = connection.prepareStatement(querry);
+                    ps2.setInt(1, 8);
+                    ps2.setString(2, username);
+                    ps2.setString(3, password);
+                    //ps.setString(5, id);;
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('Username Or Password is wrong huththo!!');");
+                    ps.executeUpdate();
+                } catch (Exception e) {
+                    System.out.println(e);
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('Username Or Password is wrong !!');");
+                }
+            } else {
                 out.println("<script type=\"text/javascript\">");
                 out.println("alert('Username Or Password is wrong !!');");
                 out.println("location='index.jsp';");

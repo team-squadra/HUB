@@ -20,7 +20,7 @@
 
  <!------------------------------------------------------------------header css added by sudesh the legend -->
 
-   <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/styles-merged.css">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/custom.css">  -->
@@ -68,7 +68,7 @@
 
    <!---------------------------------------------- header added by sudesh..bt ur shit didnt allow me to create it properly -->
 
-<!-- <div class="probootstrap-search" id="probootstrap-search">
+<div class="probootstrap-search" id="probootstrap-search">
       <a href="#" class="probootstrap-close js-probootstrap-close"><i class="icon-cross"></i></a>
       <form action="#">
         <input type="search" name="s" id="search" placeholder="Search a keyword and hit enter...">
@@ -159,9 +159,6 @@
 
  <!-- END wrapper -->
    
-   <!--------------------------------------------------------------------js part related to the header also added by sudesh the legend -->
-
-<!-- 
     <script src="js/scripts.min.js"></script>
     <script src="js/main.min.js"></script>
     <script src="js/custom.js"></script> -->
