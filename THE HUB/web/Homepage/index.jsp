@@ -139,7 +139,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                  <div class="probootstrap-slider-text text-center">
+                  <div class="probootstrap-slider-text text-center"> 
                     <h1 class="probootstrap-heading probootstrap-animate" id="indu"><b>UNIVERSITIES</b></h1>
                     <br>
                     <h1 class="probootstrap-heading probootstrap-animate">Education is Life</h1>
@@ -283,30 +283,31 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="owl-carousel" id="owl1">
-                          
-                          <%
-                            //industry_events obj_industry_events = new industry_events();
-                            //List<industry_events_bean> list = obj_industry_events.get_com_events();
-                            //Iterator<industry_events_bean> it_list = list.iterator();
+                        
+                      <%-- <%
+                            industry_events obj_industry_events = new industry_events();
+                            List<industry_events_bean> com_events = obj_industry_events.get_com_events();
+                            Iterator<industry_events_bean> it_list2 = com_events.iterator();
 
                         %> 
                         <%
-                              //while (it_list.hasNext()) {
-                                 //industry_events_bean obj_industry_events = new industry_events_bean();
-                                 //obj_industry_events = it_list.next();
+                              while (it_list2.hasNext()) {
+                                 industry_events_bean obj_industry_events_bean = new industry_events_bean();
+                                 obj_industry_events_bean = it_list2.next();
                                  
-                            //Start Event DATE TIME Split
-                            //String start_event = obj_industry_events.getstart_event();
-                            //String[] start_parts = start_event.split(" ");
-                            //String start_date = start_parts[0];
-                            //String start_time = start_parts[1];    
-                        %>
-                        
+                            Start Event DATE TIME Split
+                            String start_event = obj_industry_events_bean.getstart_event();
+                            String[] start_parts = start_event.split(" ");
+                            String start_date = start_parts[0];
+                            String start_time = start_parts[1];
+                        %> --%>
+
+
                         <div class="item">
                           <a href="#" class="probootstrap-featured-news-box">
                             <figure class="probootstrap-media"><img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
                             <div class="probootstrap-text">
-                              <h3></h3>
+                              <%-- <h3><%=obj_industry_events_bean.gettitle()%></h3> --%>
                               <p></p>
                               <span class="probootstrap-date"><i class="icon-calendar"></i></span>
                               
