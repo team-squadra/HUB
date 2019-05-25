@@ -108,6 +108,7 @@
               <li class="dropdown">
                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">More Pages</a>
                 <ul class="dropdown-menu">
+                
                 <li class="dropdown-submenu dropdown">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Academic calenders</span></a>
                     <ul class="dropdown-menu">
@@ -118,10 +119,10 @@
 
                     </ul>
                   </li>
-                  <li><a href="courses.html">Courses</a></li>
+                  <li><a href="Homepage\industry_events.jsp">All Industry Events</a></li>
+                  <li><a href="Homepage\university.jsp">All University Events</a></li>
                   <li><a href="Homepage\course-single.html">Course Single</a></li>
                   <li><a href="Homepage\gallery.html">Gallery</a></li>
-                  <li><a href="Homepage\news.html">News</a></li>
                   <li><a href="Homepage\about.html">About Us</a></li>
                 </ul>
               </li>

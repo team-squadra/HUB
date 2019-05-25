@@ -95,10 +95,10 @@
                     </ul>
                   </li>
 
-                  <li><a href="courses.html">Courses</a></li>
+                  <li><a href="industry_events.jsp">All Industry Events</a></li>
+                  <li><a href="university.jsp">All University Events</a></li>
                   <li><a href="course-single.html">Course Single</a></li>
                   <li><a href="gallery.html">Gallery</a></li>
-                  <li><a href="news.html">News</a></li>
                   <li><a href="about.html">About Us</a></li>
                 </ul>
               </li>

@@ -107,10 +107,10 @@
                     </ul>
                   </li>
                   
-                  <li><a href="courses.html">Courses</a></li>
+                  <li><a href="industry_events.jsp">All Industry Events</a></li>
+                  <li><a href="university.jsp">All University Events</a></li>
                   <li><a href="course-single.html">Course Single</a></li>
                   <li><a href="gallery.html">Gallery</a></li>
-                  <li><a href="news.html">News</a></li>
                   <li><a href="about.html">About Us</a></li>
                   
                   
@@ -708,7 +708,7 @@
           <div class="row">
             <div class="col-md-4">
               <div class="probootstrap-footer-widget">
-                <h3>About The School</h3>
+                <h3>About The HUB</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro provident suscipit natus a cupiditate ab minus illum quaerat maxime inventore Ea consequatur consectetur hic provident dolor ab aliquam eveniet alias</p>
                 <h3>Social</h3>
                 <ul class="probootstrap-footer-social">

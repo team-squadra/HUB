@@ -1,3 +1,7 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="common.industry_events_bean"%>
+<%@page import="java.util.List"%>
+<%@page import="CRUD.industry_events"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,13 +20,6 @@
       <script src="js/vendor/html5shiv.min.js"></script>
       <script src="js/vendor/respond.min.js"></script>
     <![endif]-->
-    <style>
-    #home_name{
-        font-size: 40px;
-        font-weight: bold;
-        padding: 10px;
-      }
-      </style>
   </head>
   <body>
 
@@ -77,24 +74,24 @@
 
               <li><a href="index.jsp">Home</a></li>
               <li><a href="industry.jsp">Industry</a></li>
-              <li><a href="university.jsp">University</a></li>
-              <li class="active"><a href="students.jsp">Students</a></li>
+              <li ><a href="university.jsp">University</a></li>
+              <li><a href="students.jsp">Students</a></li>
 
               <li class="dropdown">
                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">More Pages</a>
                 <ul class="dropdown-menu">
-                <li class="dropdown-submenu dropdown">
+
+                   <li class="dropdown-submenu dropdown">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Academic calenders</span></a>
                     <ul class="dropdown-menu">
 
-                      <li><a href="..\Cal_insert.jsp">Add An Event</a></li>
+                     <li><a href="..\Cal_insert.jsp">Add An Event</a></li>
                       <li><a href="http://localhost/calender/index.php">View Calender</a></li>
                       <li><a href="..\Calender\Cal_edit_delete.jsp">Edit Or Delete Events</a></li>
                       <li><a href="#">Second Level Menu</a></li>
 
                     </ul>
                   </li>
-
                   <li><a href="industry_events.jsp">All Industry Events</a></li>
                   <li><a href="university.jsp">All University Events</a></li>
                   <li><a href="course-single.html">Course Single</a></li>
@@ -102,7 +99,10 @@
                   <li><a href="about.html">About Us</a></li>
                 </ul>
               </li>
-              <li><a href="../signin.jsp">Login</a></li>
+                  <li><a href="../signin.jsp">Login</a></li>
+                </ul>
+              </li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -124,12 +124,12 @@
             <div class="col-md-12">
               <div class="probootstrap-flex-block">
                 <div class="probootstrap-text probootstrap-animate">
-                  <div class="text-uppercase probootstrap-uppercase">Featured Events</div>
+                  <div class="text-uppercase probootstrap-uppercase">Featured News</div>
                   <h3>Students Math Competition for The Year 2017</h3>
                   <p>Quis explicabo veniam labore ratione illo vero voluptate a deserunt incidunt odio aliquam commodi </p>
                   <p>
                     <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                    <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span>
+                    <span class="probootstrap-location"><i class="icon-user2"></i>By Admin</span>
                   </p>
                   <p><a href="#" class="btn btn-primary">Learn More</a></p>
                 </div>
@@ -154,8 +154,9 @@
                 <figure class="probootstrap-media"><img src="img/img_sm_1.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
                 <div class="probootstrap-text">
                   <h3>Tempora consectetur unde nisi</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, quaerat?</p>
                   <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                  <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span>
+                  <span class="probootstrap-location"><i class="icon-user2"></i>By Admin</span>
                 </div>
               </a>
             </div>
@@ -164,8 +165,9 @@
                 <figure class="probootstrap-media"><img src="img/img_sm_2.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
                 <div class="probootstrap-text">
                   <h3>Tempora consectetur unde nisi</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, unde?</p>
                   <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                  <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span>
+                  <span class="probootstrap-location"><i class="icon-user2"></i>By Admin</span>
                 </div>
               </a>
             </div>
@@ -175,33 +177,35 @@
                 <figure class="probootstrap-media"><img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
                 <div class="probootstrap-text">
                   <h3>Tempora consectetur unde nisi</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, possimus!</p>
                   <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                  <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span>
+                  <span class="probootstrap-location"><i class="icon-user2"></i>By Admin</span>
                 </div>
               </a>
             </div>
 
             <div class="clearfix visible-md-block"></div>
-            
+
             <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
               <a href="#" class="probootstrap-featured-news-box">
                 <figure class="probootstrap-media"><img src="img/img_sm_1.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
                 <div class="probootstrap-text">
                   <h3>Tempora consectetur unde nisi</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, sunt!</p>
                   <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                  <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span>
+                  <span class="probootstrap-location"><i class="icon-user2"></i>By Admin</span>
                 </div>
               </a>
             </div>
             <div class="clearfix visible-sm-block visible-xs-block"></div>
-            
             <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
               <a href="#" class="probootstrap-featured-news-box">
                 <figure class="probootstrap-media"><img src="img/img_sm_2.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
                 <div class="probootstrap-text">
                   <h3>Tempora consectetur unde nisi</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, voluptatem.</p>
                   <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                  <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span>
+                  <span class="probootstrap-location"><i class="icon-user2"></i>By Admin</span>
                 </div>
               </a>
             </div>
@@ -210,14 +214,16 @@
                 <figure class="probootstrap-media"><img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
                 <div class="probootstrap-text">
                   <h3>Tempora consectetur unde nisi</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, magnam.</p>
                   <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                  <span class="probootstrap-location"><i class="icon-location2"></i>White Palace, Brooklyn, NYC</span>
+                  <span class="probootstrap-location"><i class="icon-user2"></i>By Admin</span>
                 </div>
               </a>
             </div>
             <div class="clearfix visible-sm-block visible-xs-block"></div>
 
           </div>
+
         </div>
       </section>
       
@@ -298,5 +304,6 @@
     <script src="js/scripts.min.js"></script>
     <script src="js/main.min.js"></script>
     <script src="js/custom.js"></script>
+
   </body>
 </html>
