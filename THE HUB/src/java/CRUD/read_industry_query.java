@@ -11,47 +11,48 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import common.DB_Connection;
-import common.user_bean2;
+import common.industry_query_bean;
 
 /**
  *
  * @author Sudesh Fernandezz
  */
-public class read_industry_values {
+public class read_industry_query {
 
-    public List get_industry_values() {
+    public List get_scenarios() {
 
         DB_Connection obj_DB_Connection = new DB_Connection();
         Connection connection = obj_DB_Connection.get_connection();
         PreparedStatement ps = null;
         ResultSet rs = null;
-        List list = new ArrayList();
+        List scenarios = new ArrayList();
 
         try {
-            String querry = "select * from industries";
+            String querry = "select * from scenarios";
             ps = connection.prepareStatement(querry);
             rs = ps.executeQuery();
             while (rs.next()) {
-                user_bean2 obj_user_bean2 = new user_bean2();
+
+                industry_query_bean obj_industry_query_bean = new industry_query_bean();
+
                 System.out.println(rs.getString("id"));
-                System.out.println(rs.getString("industry_name"));
+                System.out.println(rs.getString("query_title"));
                 System.out.println(rs.getString("description"));
-                System.out.println(rs.getString("emp_count"));
-                //System.out.println(rs.getBlob("com_pic"));
+                System.out.println(rs.getString("company_name"));
+                System.out.println(rs.getString("date"));
 
-                obj_user_bean2.set_industry_id(rs.getString("id"));
-                obj_user_bean2.set_industry_name(rs.getString("industry_name"));
-                obj_user_bean2.set_idiscription(rs.getString("description"));
-                obj_user_bean2.set_emp_count(rs.getString("emp_count"));
-                //obj_user_bean2.set_com_pic(rs.getBlob("com_pic"));
+                obj_industry_query_bean.setid(rs.getString("id"));
+                obj_industry_query_bean.setquery_title(rs.getString("query_title"));
+                obj_industry_query_bean.setdescription(rs.getString("description"));
+                obj_industry_query_bean.setcompany_name(rs.getString("company_name"));
+                obj_industry_query_bean.setdate(rs.getString("date"));
 
-                list.add(obj_user_bean2);
+                scenarios.add(obj_industry_query_bean);
             }
         } catch (Exception e) {
             System.out.println(e);
         }
-        return list;
+        return scenarios;
 
     }
-
 }

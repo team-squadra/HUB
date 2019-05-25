@@ -272,6 +272,7 @@
                 </div>
             </section>
 
+<<<<<<< HEAD
             <section class="probootstrap-section probootstrap-section">
                 <div class="container">
                     <div class="row">
@@ -408,6 +409,81 @@
                                     <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
                                     <p><a href="#" class="btn btn-primary">Explore More</a> <span class="enrolled-count">2,928 students enrolled</span></p>
                                 </div>
+=======
+      <section class="probootstrap-section probootstrap-section-colored probootstrap-bg probootstrap-custom-heading probootstrap-tab-section" style="background-image: url(img/slider_2.jpg)">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center section-heading probootstrap-animate">
+              <h2 class="mb0"><b>Highlights</b></h2>
+            </div>
+          </div>
+        </div>
+        <div class="probootstrap-tab-style-1">
+          <ul class="nav nav-tabs probootstrap-center probootstrap-tabs no-border">
+            <li class="active"><a data-toggle="tab" href="#featured-news">Upcoming Industry Events</a></li>
+            <li><a data-toggle="tab" href="#upcoming-events">Upcoming University Events</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="probootstrap-section probootstrap-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              
+              <div class="tab-content">
+
+                <div id="featured-news" class="tab-pane fade in active">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="owl-carousel" id="owl1">
+                        
+                      <%
+                            industry_events obj_industry_events = new industry_events();
+                            List<industry_events_bean> com_events = obj_industry_events.get_com_events();
+                            Iterator<industry_events_bean> it_list2 = com_events.iterator();
+
+                        %> 
+                        <%
+                              while (it_list2.hasNext()) {
+                                 industry_events_bean obj_industry_events_bean = new industry_events_bean();
+                                 obj_industry_events_bean = it_list2.next();
+                                 
+                        /*    //Start Event DATE TIME Split
+                            String start_event = obj_industry_events_bean.getstart_event();
+                            String[] start_parts = start_event.split(" ");
+                            String start_date = start_parts[0];
+                            String start_time = start_parts[1]; */
+                        %> 
+
+                        <div class="item">
+                          <a href="#" class="probootstrap-featured-news-box">
+                            <figure class="probootstrap-media"><img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
+                            <div class="probootstrap-text">
+                              <h3><b><%=obj_industry_events_bean.gettitle()%></b></h3>
+                              <p><%=obj_industry_events_bean.getdescription()%></p>
+                             <!-- <span class="probootstrap-date"><i class="icon-calendar"></i>Date - <%=start_date%></span> -->
+                              <!-- <span class="probootstrap-date"><i class="icon-calendar"></i>Time - <%=start_time%></span> -->
+                              <span class="probootstrap-date"><i class="icon-location"></i>Place - <%=obj_industry_events_bean.getcompany()%></span>
+                              
+                            </div>
+                          </a>
+                        </div>
+
+                        <%
+                            }
+                        %> 
+                        <!-- END item -->
+                        <!-- END item -->
+                        <div class="item">
+                          <a href="#" class="probootstrap-featured-news-box">
+                            <figure class="probootstrap-media"><img src="img/img_sm_1.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
+                            <div class="probootstrap-text">
+                              <h3>Tempora consectetur unde nisi</h3>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, officia.</p>
+                              <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
+                              
+>>>>>>> 4e3f7dc10bcee37af0f0071090bff39795e17b0c
                             </div>
 
                             <div class="probootstrap-service-2 probootstrap-animate">
@@ -543,6 +619,7 @@
                         </div>
                     </div>
 
+<<<<<<< HEAD
                 </div>
             </section>
             <section class="probootstrap-section probootstrap-bg probootstrap-section-colored probootstrap-testimonial" style="background-image: url(img/slider_4.jpg);">
@@ -639,6 +716,97 @@
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam soluta at.</p>
                                 </div>
                             </div>
+=======
+              </div>
+            
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="probootstrap-section probootstrap-bg-white probootstrap-border-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
+              <h2>SOME SCENARIOS</h2>
+              <p class="lead">Here are some problem scenarios to be solved which are uploaded by some of our industry partners</p>
+            </div>
+          </div>
+          <!-- END row -->
+          
+                        <%
+                            read_industry_query obj_read_industry_query = new read_industry_query();
+                            List<industry_query_bean> scenarios = obj_read_industry_query.get_scenarios();
+                            Iterator<industry_query_bean> it_list2 = scenarios.iterator();
+
+                        %> 
+                        <%
+                              while (it_list2.hasNext()) {
+                                 industry_query_bean obj_industry_query_bean = new industry_query_bean();
+                                 obj_industry_query_bean = it_list2.next();
+                                 
+                            //Start Event DATE TIME Split
+                            //String start_event = obj_industry_events_bean.getstart_event();
+                            //String[] start_parts = start_event.split(" ");
+                            //String start_date = start_parts[0];
+                            //String start_time = start_parts[1];
+                        %> 
+
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="probootstrap-service-2 probootstrap-animate">
+                <div class="image">
+                  <div class="image-bg">
+                    <img src="img/img_sm_1.jpg" alt="Free Bootstrap Template by uicookies.com">
+                  </div>
+                </div>
+                <div class="text">
+                  <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span>
+                  <h3><%=obj_industry_query_bean.getquery_title()%></h3>
+                  <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
+                  <p><a href="#" class="btn btn-primary">Explore More</a> <span class="enrolled-count">2,928 students enrolled</span></p>
+                </div>
+              </div>
+                <%
+                     }
+                 %>
+             
+
+
+            </div>
+            <div class="col-md-6">
+              <div class="probootstrap-service-2 probootstrap-animate">
+                <%-- <div class="image">
+                  <div class="image-bg">
+                    <img src="img/img_sm_2.jpg" alt="Free Bootstrap Template by uicookies.com">
+                  </div>
+                </div> --%>
+                <div class="text">
+                  <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span>
+                  <h3>Math Major</h3>
+                  <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
+                  <p><a href="#" class="btn btn-primary">Explore More</a> <span class="enrolled-count">12,582 students enrolled</span></p>
+                </div>
+              </div>
+
+                
+                 <!--end item -->
+
+              <div class="probootstrap-service-2 probootstrap-animate">
+                <div class="image">
+                  <div class="image-bg">
+                    <img src="img/img_sm_4.jpg" alt="Free Bootstrap Template by uicookies.com">
+                  </div>
+                </div>
+                <div class="text">
+                  <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span>
+                  <h3>English Major</h3>
+                  <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
+                  <p><a href="#" class="btn btn-primary">Explore More</a> <span class="enrolled-count">9,582 students enrolled</span></p>
+                </div>
+              </div>
+>>>>>>> 4e3f7dc10bcee37af0f0071090bff39795e17b0c
 
                             <div class="service left-icon probootstrap-animate">
                                 <div class="icon"><i class="icon-checkmark"></i></div>
