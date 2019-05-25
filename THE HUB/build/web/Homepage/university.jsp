@@ -1,3 +1,7 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="common.uni_bean"%>
+<%@page import="java.util.List"%>
+<%@page import="CRUD.read_uni_values"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -73,16 +77,17 @@
           </div>
 
           <div id="navbar-collapse" class="navbar-collapse collapse">
+          
             <ul class="nav navbar-nav navbar-right">
-
               <li><a href="index.jsp">Home</a></li>
               <li><a href="industry.jsp">Industry</a></li>
               <li class="active"><a href="university.jsp">University</a></li>
               <li><a href="students.jsp">Students</a></li>
-              
               <li class="dropdown">
-                <a href="#" data-toggle="dropdown" class="dropdown-toggle">More Pages</a>
+
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle"> More Pages</a>
                 <ul class="dropdown-menu">
+
                 <li class="dropdown-submenu dropdown">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Academic calenders</span></a>
                     <ul class="dropdown-menu">
@@ -94,11 +99,13 @@
 
                     </ul>
                   </li>
+
                   <li><a href="courses.html">Courses</a></li>
                   <li><a href="course-single.html">Course Single</a></li>
                   <li><a href="gallery.html">Gallery</a></li>
                   <li><a href="news.html">News</a></li>
                   <li><a href="about.html">About Us</a></li>
+                  
                 </ul>
               </li>
               <li><a href="../signin.jsp">Login</a></li>
@@ -111,7 +118,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-left section-heading probootstrap-animate">
-              <h1>Our Teachers</h1>
+              <h1>OUR UNIVERSITY PARTNERS</h1>
             </div>
           </div>
         </div>
@@ -123,11 +130,12 @@
             <div class="col-md-12">
               <div class="probootstrap-flex-block">
                 <div class="probootstrap-text probootstrap-animate">
-                  <h3>We Hired Certified Teachers For Our Students</h3>
+                  <div class="text-uppercase probootstrap-uppercase">Featured INDUSTRY NEWS</div>
+                  <h3>Chemical Engineering</h3>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis explicabo veniam labore ratione illo vero voluptate a deserunt incidunt odio aliquam commodi blanditiis voluptas error non rerum temporibus optio accusantium!</p>
-                  <p><a href="#" class="btn btn-primary">Learn More</a></p>
+                  <p><a href="#" class="btn btn-primary">Enroll now</a> <span class="enrolled-count">2,928 students enrolled</span></p>
                 </div>
-                <div class="probootstrap-image probootstrap-animate" style="background-image: url(img/slider_3.jpg)">
+                <div class="probootstrap-image probootstrap-animate" style="background-image: url(img/com_cover4.jpg)">
                   <a href="https://vimeo.com/45830194" class="btn-video popup-vimeo"><i class="icon-play3"></i></a>
                 </div>
               </div>
@@ -135,229 +143,71 @@
           </div>
         </div>
       </section>
+              
 
+      <section class="probootstrap-section">
+              <%
+                read_uni_values obj_read_uni_values = new read_uni_values();
+                List<uni_bean> list = obj_read_uni_values.get_uni_values();
+                Iterator<uni_bean> it_list = list.iterator();
 
+              %> 
+              <%
+                while (it_list.hasNext()) {
+                 uni_bean obj_uni_bean = new uni_bean();
+                 obj_uni_bean = it_list.next();
+              %>
+        <div class="container"> 
+          <div class="row">
+            <div class="col-md-6">
+              <div class="probootstrap-service-2 probootstrap-animate">
+                <div class="image">
+                  <div class="image-bg">
+                    <img src="" alt="Free Bootstrap Template by uicookies.com">
+                  </div>
+                </div>
+                <div class="text">
+                  <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span>
+                  <h3><b><%=obj_uni_bean.get_uni_name()%></b></h3>
+                  <p><%=obj_uni_bean.get_discription()%></p>
+                  <p><a href="#" class="btn btn-primary">Visit Page</a> <span class="enrolled-count"><%=obj_uni_bean.get_stud_count()%> Students</span></p>
+                </div>
+              </div>
+                 
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="probootstrap-service-2 probootstrap-animate">
+                <%-- <div class="image">
+                  <div class="image-bg">
+                    <img src="img/img_sm_1.jpg" alt="Free Bootstrap Template by uicookies.com">
+                  </div>
+                </div> --%>
+               
+              </div>
+            </div>
+            
+          </div>
+               
+        </div>
+                <%
+                     }
+                 %>
+                 <!--end item -->
+      </section>
+
+               
       
       
       <section class="probootstrap-section">
         <div class="container">
-          
-
           <div class="row">
-            <div class="col-md-3 col-sm-6">
-              <div class="probootstrap-teacher text-center probootstrap-animate">
-                <figure class="media">
-                  <img src="img/person_1.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-                </figure>
-                <div class="text">
-                  <h3>Chris Worth</h3>
-                  <p>Physical Education</p>
-                  <ul class="probootstrap-footer-social">
-                    <li class="twitter"><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li class="facebook"><a href="#"><i class="icon-facebook2"></i></a></li>
-                    <li class="instagram"><a href="#"><i class="icon-instagram2"></i></a></li>
-                    <li class="google-plus"><a href="#"><i class="icon-google-plus"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-              <div class="probootstrap-teacher text-center probootstrap-animate">
-                <figure class="media">
-                  <img src="img/person_5.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-                </figure>
-                <div class="text">
-                  <h3>Janet Morris</h3>
-                  <p>English Teacher</p>
-                  <ul class="probootstrap-footer-social">
-                    <li class="twitter"><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li class="facebook"><a href="#"><i class="icon-facebook2"></i></a></li>
-                    <li class="instagram"><a href="#"><i class="icon-instagram2"></i></a></li>
-                    <li class="google-plus"><a href="#"><i class="icon-google-plus"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="clearfix visible-sm-block visible-xs-block"></div>
-            <div class="col-md-3 col-sm-6">
-              <div class="probootstrap-teacher text-center probootstrap-animate">
-                <figure class="media">
-                  <img src="img/person_6.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-                </figure>
-                <div class="text">
-                  <h3>Linda Reyez</h3>
-                  <p>Math Teacher</p>
-                  <ul class="probootstrap-footer-social">
-                    <li class="twitter"><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li class="facebook"><a href="#"><i class="icon-facebook2"></i></a></li>
-                    <li class="instagram"><a href="#"><i class="icon-instagram2"></i></a></li>
-                    <li class="google-plus"><a href="#"><i class="icon-google-plus"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-              <div class="probootstrap-teacher text-center probootstrap-animate">
-                <figure class="media">
-                  <img src="img/person_7.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-                </figure>
-                <div class="text">
-                  <h3>Jessa Sy</h3>
-                  <p>Physics Teacher</p>
-                  <ul class="probootstrap-footer-social">
-                    <li class="twitter"><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li class="facebook"><a href="#"><i class="icon-facebook2"></i></a></li>
-                    <li class="instagram"><a href="#"><i class="icon-instagram2"></i></a></li>
-                    <li class="google-plus"><a href="#"><i class="icon-google-plus"></i></a></li>
-                  </ul>
-                </div>
-              </div>
+            <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
+              <h2>Meet Our Qualified Teachers</h2>
+              <p class="lead">Sed a repudiandae impedit voluptate nam Deleniti dignissimos perspiciatis nostrum porro nesciunt</p>
             </div>
           </div>
-
-          <div class="row">
-            <div class="col-md-3 col-sm-6">
-              <div class="probootstrap-teacher text-center probootstrap-animate">
-                <figure class="media">
-                  <img src="img/person_1.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-                </figure>
-                <div class="text">
-                  <h3>Chris Worth</h3>
-                  <p>Physical Education</p>
-                  <ul class="probootstrap-footer-social">
-                    <li class="twitter"><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li class="facebook"><a href="#"><i class="icon-facebook2"></i></a></li>
-                    <li class="instagram"><a href="#"><i class="icon-instagram2"></i></a></li>
-                    <li class="google-plus"><a href="#"><i class="icon-google-plus"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-              <div class="probootstrap-teacher text-center probootstrap-animate">
-                <figure class="media">
-                  <img src="img/person_5.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-                </figure>
-                <div class="text">
-                  <h3>Janet Morris</h3>
-                  <p>English Teacher</p>
-                  <ul class="probootstrap-footer-social">
-                    <li class="twitter"><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li class="facebook"><a href="#"><i class="icon-facebook2"></i></a></li>
-                    <li class="instagram"><a href="#"><i class="icon-instagram2"></i></a></li>
-                    <li class="google-plus"><a href="#"><i class="icon-google-plus"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="clearfix visible-sm-block visible-xs-block"></div>
-            <div class="col-md-3 col-sm-6">
-              <div class="probootstrap-teacher text-center probootstrap-animate">
-                <figure class="media">
-                  <img src="img/person_6.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-                </figure>
-                <div class="text">
-                  <h3>Linda Reyez</h3>
-                  <p>Math Teacher</p>
-                  <ul class="probootstrap-footer-social">
-                    <li class="twitter"><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li class="facebook"><a href="#"><i class="icon-facebook2"></i></a></li>
-                    <li class="instagram"><a href="#"><i class="icon-instagram2"></i></a></li>
-                    <li class="google-plus"><a href="#"><i class="icon-google-plus"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-              <div class="probootstrap-teacher text-center probootstrap-animate">
-                <figure class="media">
-                  <img src="img/person_7.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-                </figure>
-                <div class="text">
-                  <h3>Jessa Sy</h3>
-                  <p>Physics Teacher</p>
-                  <ul class="probootstrap-footer-social">
-                    <li class="twitter"><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li class="facebook"><a href="#"><i class="icon-facebook2"></i></a></li>
-                    <li class="instagram"><a href="#"><i class="icon-instagram2"></i></a></li>
-                    <li class="google-plus"><a href="#"><i class="icon-google-plus"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-3 col-sm-6">
-              <div class="probootstrap-teacher text-center probootstrap-animate">
-                <figure class="media">
-                  <img src="img/person_1.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-                </figure>
-                <div class="text">
-                  <h3>Chris Worth</h3>
-                  <p>Physical Education</p>
-                  <ul class="probootstrap-footer-social">
-                    <li class="twitter"><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li class="facebook"><a href="#"><i class="icon-facebook2"></i></a></li>
-                    <li class="instagram"><a href="#"><i class="icon-instagram2"></i></a></li>
-                    <li class="google-plus"><a href="#"><i class="icon-google-plus"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-              <div class="probootstrap-teacher text-center probootstrap-animate">
-                <figure class="media">
-                  <img src="img/person_5.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-                </figure>
-                <div class="text">
-                  <h3>Janet Morris</h3>
-                  <p>English Teacher</p>
-                  <ul class="probootstrap-footer-social">
-                    <li class="twitter"><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li class="facebook"><a href="#"><i class="icon-facebook2"></i></a></li>
-                    <li class="instagram"><a href="#"><i class="icon-instagram2"></i></a></li>
-                    <li class="google-plus"><a href="#"><i class="icon-google-plus"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="clearfix visible-sm-block visible-xs-block"></div>
-            <div class="col-md-3 col-sm-6">
-              <div class="probootstrap-teacher text-center probootstrap-animate">
-                <figure class="media">
-                  <img src="img/person_6.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-                </figure>
-                <div class="text">
-                  <h3>Linda Reyez</h3>
-                  <p>Math Teacher</p>
-                  <ul class="probootstrap-footer-social">
-                    <li class="twitter"><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li class="facebook"><a href="#"><i class="icon-facebook2"></i></a></li>
-                    <li class="instagram"><a href="#"><i class="icon-instagram2"></i></a></li>
-                    <li class="google-plus"><a href="#"><i class="icon-google-plus"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-              <div class="probootstrap-teacher text-center probootstrap-animate">
-                <figure class="media">
-                  <img src="img/person_7.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
-                </figure>
-                <div class="text">
-                  <h3>Jessa Sy</h3>
-                  <p>Physics Teacher</p>
-                  <ul class="probootstrap-footer-social">
-                    <li class="twitter"><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li class="facebook"><a href="#"><i class="icon-facebook2"></i></a></li>
-                    <li class="instagram"><a href="#"><i class="icon-instagram2"></i></a></li>
-                    <li class="google-plus"><a href="#"><i class="icon-google-plus"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+          <!-- END row -->
 
           <div class="row">
             <div class="col-md-3 col-sm-6">

@@ -306,13 +306,13 @@
 
                         <div class="item">
                           <a href="#" class="probootstrap-featured-news-box">
-                            <figure class="probootstrap-media"><img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
+                            <figure class="probootstrap-media"><img src="img/event.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
                             <div class="probootstrap-text">
                               <h3><b><%=obj_industry_events_bean.gettitle()%></b></h3>
                               <p><%=obj_industry_events_bean.getdescription()%></p>
-                              <span class="probootstrap-date"><i class="icon-calendar"></i>Date - <%=start_date%></span>
-                              <span class="probootstrap-date"><i class="icon-calendar"></i>Time - <%=start_time%></span>
-                              <span class="probootstrap-date"><i class="icon-location"></i>Place - <%=obj_industry_events_bean.getcompany()%></span>
+                              <span class="probootstrap-date" style="color:red;"><i class="icon-calendar" style="color:blue;"></i>Date - <%=start_date%></span>
+                              <span class="probootstrap-date" style="color:red;"><i class="icon-calendar" style="color:blue;"></i>Time - <%=start_time%></span>
+                              <span class="probootstrap-date" style="color:red;"><i class="icon-location" style="color:blue;"></i>Place - <%=obj_industry_events_bean.getcompany()%></span>
                               
                             </div>
                           </a>
