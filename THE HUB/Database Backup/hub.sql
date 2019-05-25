@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 25, 2019 at 09:09 AM
+-- Generation Time: May 25, 2019 at 12:40 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.0.29
 
@@ -131,6 +131,30 @@ INSERT INTO `scenarios` (`id`, `query_title`, `description`, `company_name`, `da
 (3, 'Food delivery system', 'The company delivers meal kits to people for home food preparation. DoorDash, which would later become a Y-Combinator summer 2013 food delivery company, issues its first delivery. Instacart, which offers an app that lets users order groceries and delivers them, is founded.', 'WSO2', '2019-05-17'),
 (4, 'Motion graphics game', 'Our art and design teams work together to produce animatics and pre-visualisation work which fits seamlessly with the narrative and creative style of a game, ...\r\n', 'Arimac Digital', '2019-05-21');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `universities`
+--
+
+DROP TABLE IF EXISTS `universities`;
+CREATE TABLE `universities` (
+  `id` int(100) NOT NULL,
+  `uni_name` varchar(200) NOT NULL,
+  `description` varchar(800) NOT NULL,
+  `stud_count` int(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `universities`
+--
+
+INSERT INTO `universities` (`id`, `uni_name`, `description`, `stud_count`) VALUES
+(1, 'University of Colombo', 'The University of Colombo is a public research university located primarily in Colombo, Sri Lanka. It is the oldest institution of modern higher education in Sri Lanka. Specialised in the fields of natural, social, and applied sciences as well as mathematics, computer sciences, and law', 1000),
+(2, 'Nsbm Green University', 'The National School of Business Management is a private degree awarding institute in Sri Lanka, established under Companies Act No. 07 of 2007 and having company number PB 4833 and also it is the first ever green university in South Asia specialising in Computer sciences, Business, Engineering and Technology', 9000),
+(3, 'University of Kelaniya', 'The University of Kelaniya is a state university of Sri Lanka. Just outside the municipal limits of Colombo, in the city of Kelaniya, the university has two major campuses, seven locations, six faculties and four institutions.', 8000),
+(4, 'University of Moratuwa', 'The University of Moratuwa, located on the bank of the Bolgoda Lake in Katubedda, Moratuwa is the most sought after technological university in Sri Lanka.', 4000);
+
 --
 -- Indexes for dumped tables
 --
@@ -160,6 +184,12 @@ ALTER TABLE `scenarios`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `universities`
+--
+ALTER TABLE `universities`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -185,6 +215,12 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `scenarios`
 --
 ALTER TABLE `scenarios`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `universities`
+--
+ALTER TABLE `universities`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
