@@ -14,7 +14,9 @@ public class industry_events_bean {
 	private String title;
 	private String start_event;
 	private String end_event;
-        private String description;
+	private String description;
+	private String company;
+
 	public String getid() {
 		return id;
 	}
@@ -44,5 +46,11 @@ public class industry_events_bean {
 	}
 	public void setdescription(String description) {
 		this.description = description;
+	}
+	public String getcompany() {
+		return company;
+	}
+	public void setcompany(String company) {
+		this.company = company;
 	}
 }

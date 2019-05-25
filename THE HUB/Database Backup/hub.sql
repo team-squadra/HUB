@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2019 at 11:07 AM
+-- Generation Time: May 25, 2019 at 09:09 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.0.29
 
@@ -37,23 +37,25 @@ CREATE TABLE `events` (
   `start_event` datetime NOT NULL,
   `end_event` datetime NOT NULL,
   `description` varchar(200) DEFAULT NULL,
-  `type` varchar(20) NOT NULL
+  `type` varchar(20) NOT NULL,
+  `company` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`id`, `title`, `start_event`, `end_event`, `description`, `type`) VALUES
-(21, 'hjg', '2019-04-09 13:00:00', '2019-04-22 12:00:00', 'jtfjtf', 'uni'),
-(22, 'jygfjgyjfgcj', '2019-04-01 01:05:00', '2019-04-05 17:06:00', '66666', 'uni'),
-(24, 'pasiya', '2019-04-01 00:00:00', '2019-04-02 13:00:00', 'gsagasfasf', 'uni'),
-(25, 'Hishan Abeysiriwardana', '2019-05-10 01:00:00', '2019-05-12 12:00:00', 'huththooooooooo', 'uni'),
-(26, 'rsgrsg', '2019-04-01 01:00:00', '2019-04-02 13:01:00', 'uygjtgyugu', 'uni'),
-(27, 'Hishan Abeysiriwardana', '2019-05-01 01:00:00', '2019-05-08 13:00:00', 'hjhjhjhjjh', 'uni'),
-(28, 'Hishan Abeysiriwardana', '2019-05-10 01:00:00', '2019-05-12 12:00:00', 'huththooooooooo', 'uni'),
-(29, 'Git Hub workshop', '2019-05-01 08:00:00', '2019-05-21 12:00:00', 'Giving back to the open-source community some of the components which helps to build our awesome ent', 'com'),
-(30, 'Serverless', '2019-06-11 09:00:00', '2019-06-21 13:00:00', 'experience the better serverless ideas', 'com');
+INSERT INTO `events` (`id`, `title`, `start_event`, `end_event`, `description`, `type`, `company`) VALUES
+(21, 'hjg', '2019-04-09 13:00:00', '2019-04-22 12:00:00', 'jtfjtf', 'uni', ''),
+(22, 'jygfjgyjfgcj', '2019-04-01 01:05:00', '2019-04-05 17:06:00', '66666', 'uni', ''),
+(24, 'pasiya', '2019-04-01 00:00:00', '2019-04-02 13:00:00', 'gsagasfasf', 'uni', ''),
+(25, 'Hishan Abeysiriwardana', '2019-05-10 01:00:00', '2019-05-12 12:00:00', 'huththooooooooo', 'uni', ''),
+(26, 'rsgrsg', '2019-04-01 01:00:00', '2019-04-02 13:01:00', 'uygjtgyugu', 'uni', ''),
+(27, 'Hishan Abeysiriwardana', '2019-05-01 01:00:00', '2019-05-08 13:00:00', 'hjhjhjhjjh', 'uni', ''),
+(28, 'Hishan Abeysiriwardana', '2019-05-10 01:00:00', '2019-05-12 12:00:00', 'huththooooooooo', 'uni', ''),
+(29, 'Git Hub workshop', '2019-05-01 08:00:00', '2019-05-21 12:00:00', 'Giving back to the open-source community ', 'com', 'Arimac Digital'),
+(30, 'Serverless', '2019-06-11 09:00:00', '2019-06-21 13:00:00', 'experience the better serverless ideas', 'com', '99 x Technology'),
+(31, 'Ionic framework workshop', '2019-05-09 10:00:00', '2019-05-24 18:00:00', 'basics about ionic framework', 'com', 'IFS');
 
 -- --------------------------------------------------------
 
@@ -104,6 +106,31 @@ CREATE TABLE `login` (
 INSERT INTO `login` (`id`, `username`, `password`, `email`, `type`) VALUES
 (49, 'sudesh', '1234', 'sudeshfernandez98@gmail.com', 'University');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `scenarios`
+--
+
+DROP TABLE IF EXISTS `scenarios`;
+CREATE TABLE `scenarios` (
+  `id` int(100) NOT NULL,
+  `query_title` varchar(500) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `company_name` varchar(50) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `scenarios`
+--
+
+INSERT INTO `scenarios` (`id`, `query_title`, `description`, `company_name`, `date`) VALUES
+(1, 'Library management system', 'A Library Management System is a software built to handle the primary housekeeping functions of a library. Libraries rely on library management systems to manage asset collections as well as relationships with their members.\r\nVideos', 'IFS ', '2019-05-16'),
+(2, 'Air pollution management system', 'The control of air pollution is one of the principal areas of pollution control, along ... of air pollution from mobile sources is described in emission-control system.) ...', '99 x Technology', '2019-05-07'),
+(3, 'Food delivery system', 'The company delivers meal kits to people for home food preparation. DoorDash, which would later become a Y-Combinator summer 2013 food delivery company, issues its first delivery. Instacart, which offers an app that lets users order groceries and delivers them, is founded.', 'WSO2', '2019-05-17'),
+(4, 'Motion graphics game', 'Our art and design teams work together to produce animatics and pre-visualisation work which fits seamlessly with the narrative and creative style of a game, ...\r\n', 'Arimac Digital', '2019-05-21');
+
 --
 -- Indexes for dumped tables
 --
@@ -127,6 +154,12 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `scenarios`
+--
+ALTER TABLE `scenarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -134,7 +167,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `industries`
@@ -147,6 +180,12 @@ ALTER TABLE `industries`
 --
 ALTER TABLE `login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+
+--
+-- AUTO_INCREMENT for table `scenarios`
+--
+ALTER TABLE `scenarios`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

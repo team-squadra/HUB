@@ -284,7 +284,7 @@
                     <div class="col-md-12">
                       <div class="owl-carousel" id="owl1">
                         
-                      <%-- <%
+                      <%
                             industry_events obj_industry_events = new industry_events();
                             List<industry_events_bean> com_events = obj_industry_events.get_com_events();
                             Iterator<industry_events_bean> it_list2 = com_events.iterator();
@@ -295,25 +295,31 @@
                                  industry_events_bean obj_industry_events_bean = new industry_events_bean();
                                  obj_industry_events_bean = it_list2.next();
                                  
-                            Start Event DATE TIME Split
+                            //Start Event DATE TIME Split
                             String start_event = obj_industry_events_bean.getstart_event();
                             String[] start_parts = start_event.split(" ");
                             String start_date = start_parts[0];
                             String start_time = start_parts[1];
-                        %> --%>
-
+                        %> 
 
                         <div class="item">
                           <a href="#" class="probootstrap-featured-news-box">
                             <figure class="probootstrap-media"><img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
                             <div class="probootstrap-text">
-                              <%-- <h3><%=obj_industry_events_bean.gettitle()%></h3> --%>
-                              <p></p>
-                              <span class="probootstrap-date"><i class="icon-calendar"></i></span>
+                              <h3><b><%=obj_industry_events_bean.gettitle()%></b></h3>
+                              <p><%=obj_industry_events_bean.getdescription()%></p>
+                              <span class="probootstrap-date"><i class="icon-calendar"></i>Date - <%=start_date%></span>
+                              <span class="probootstrap-date"><i class="icon-calendar"></i>Time - <%=start_time%></span>
+                              <span class="probootstrap-date"><i class="icon-location"></i>Place - <%=obj_industry_events_bean.getcompany()%></span>
                               
                             </div>
                           </a>
                         </div>
+
+                        <%
+                            }
+                        %> 
+                        <!-- END item -->
                         <!-- END item -->
                         <div class="item">
                           <a href="#" class="probootstrap-featured-news-box">
@@ -428,6 +434,26 @@
             </div>
           </div>
           <!-- END row -->
+          
+                        <%
+                            read_industry_query obj_read_industry_query = new read_industry_query();
+                            List<industry_query_bean> scenarios = obj_read_industry_query.get_scenarios();
+                            Iterator<industry_query_bean> it_list2 = scenarios.iterator();
+
+                        %> 
+                        <%
+                              while (it_list2.hasNext()) {
+                                 industry_query_bean obj_industry_query_bean = new industry_query_bean();
+                                 obj_industry_query_bean = it_list2.next();
+                                 
+                            //Start Event DATE TIME Split
+                            //String start_event = obj_industry_events_bean.getstart_event();
+                            //String[] start_parts = start_event.split(" ");
+                            //String start_date = start_parts[0];
+                            //String start_time = start_parts[1];
+                        %> 
+
+
           <div class="row">
             <div class="col-md-6">
               <div class="probootstrap-service-2 probootstrap-animate">
@@ -438,34 +464,25 @@
                 </div>
                 <div class="text">
                   <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span>
-                  <h3>Application Design</h3>
+                  <h3><%=obj_industry_query_bean.getquery_title()%></h3>
                   <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
                   <p><a href="#" class="btn btn-primary">Explore More</a> <span class="enrolled-count">2,928 students enrolled</span></p>
                 </div>
               </div>
+                <%
+                     }
+                 %>
+             
 
-              <div class="probootstrap-service-2 probootstrap-animate">
-                <div class="image">
-                  <div class="image-bg">
-                    <img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by uicookies.com">
-                  </div>
-                </div>
-                <div class="text">
-                  <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span>
-                  <h3>Chemical Engineering</h3>
-                  <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                  <p><a href="#" class="btn btn-primary">Explore More</a> <span class="enrolled-count">7,202 students enrolled</span></p>
-                </div>
-              </div>
 
             </div>
             <div class="col-md-6">
               <div class="probootstrap-service-2 probootstrap-animate">
-                <div class="image">
+                <%-- <div class="image">
                   <div class="image-bg">
                     <img src="img/img_sm_2.jpg" alt="Free Bootstrap Template by uicookies.com">
                   </div>
-                </div>
+                </div> --%>
                 <div class="text">
                   <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span>
                   <h3>Math Major</h3>
@@ -473,6 +490,9 @@
                   <p><a href="#" class="btn btn-primary">Explore More</a> <span class="enrolled-count">12,582 students enrolled</span></p>
                 </div>
               </div>
+
+                
+                 <!--end item -->
 
               <div class="probootstrap-service-2 probootstrap-animate">
                 <div class="image">
