@@ -1,9 +1,11 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="common.User_Bean"%>
 <%@page import="common.industry_events_bean"%>
+<%@page import="common.industry_query_bean"%>
 <%@page import="java.util.List"%>
 <%@page import="CRUD.Read_Values"%>
 <%@page import="CRUD.industry_events"%>
+<%@page import="CRUD.read_industry_query"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -438,13 +440,13 @@
                         <%
                             read_industry_query obj_read_industry_query = new read_industry_query();
                             List<industry_query_bean> scenarios = obj_read_industry_query.get_scenarios();
-                            Iterator<industry_query_bean> it_list2 = scenarios.iterator();
+                            Iterator<industry_query_bean> it_list3 = scenarios.iterator();
 
                         %> 
                         <%
-                              while (it_list2.hasNext()) {
+                              while (it_list3.hasNext()) {
                                  industry_query_bean obj_industry_query_bean = new industry_query_bean();
-                                 obj_industry_query_bean = it_list2.next();
+                                 obj_industry_query_bean = it_list3.next();
                                  
                             //Start Event DATE TIME Split
                             //String start_event = obj_industry_events_bean.getstart_event();
@@ -463,57 +465,40 @@
                   </div>
                 </div>
                 <div class="text">
-                  <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span>
-                  <h3><%=obj_industry_query_bean.getquery_title()%></h3>
-                  <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                  <p><a href="#" class="btn btn-primary">Explore More</a> <span class="enrolled-count">2,928 students enrolled</span></p>
+                  <span class="probootstrap-meta"><i class="icon-calendar2"></i><%=obj_industry_query_bean.getdate()%></span>
+                  <h3><b><%=obj_industry_query_bean.getquery_title()%></b></h3>
+                  <p><%=obj_industry_query_bean.getdescription()%></p>
+                  <p><a href="#" class="btn btn-primary"><%=obj_industry_query_bean.getcompany_name()%></a> <span class="enrolled-count">2,928 students enrolled</span></p>
                 </div>
               </div>
-                <%
-                     }
-                 %>
+               
              
 
 
             </div>
+
             <div class="col-md-6">
               <div class="probootstrap-service-2 probootstrap-animate">
-                <%-- <div class="image">
+              
+                 <div class="image">
                   <div class="image-bg">
                     <img src="img/img_sm_2.jpg" alt="Free Bootstrap Template by uicookies.com">
                   </div>
-                </div> --%>
-                <div class="text">
-                  <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span>
-                  <h3>Math Major</h3>
-                  <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                  <p><a href="#" class="btn btn-primary">Explore More</a> <span class="enrolled-count">12,582 students enrolled</span></p>
-                </div>
-              </div>
-
+                </div> 
                 
-                 <!--end item -->
-
-              <div class="probootstrap-service-2 probootstrap-animate">
-                <div class="image">
-                  <div class="image-bg">
-                    <img src="img/img_sm_4.jpg" alt="Free Bootstrap Template by uicookies.com">
-                  </div>
-                </div>
-                <div class="text">
-                  <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span>
-                  <h3>English Major</h3>
-                  <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                  <p><a href="#" class="btn btn-primary">Explore More</a> <span class="enrolled-count">9,582 students enrolled</span></p>
-                </div>
               </div>
-
+              
             </div>
+                
           </div>
+                <%
+                     }
+                 %>      
         </div>
+                
       </section>
 
-      
+                
       
       <section class="probootstrap-section">
         <div class="container">
