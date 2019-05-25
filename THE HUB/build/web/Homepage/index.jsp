@@ -1,9 +1,11 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="common.User_Bean"%>
 <%@page import="common.industry_events_bean"%>
+<%@page import="common.industry_query_bean"%>
 <%@page import="java.util.List"%>
 <%@page import="CRUD.Read_Values"%>
 <%@page import="CRUD.industry_events"%>
+<%@page import="CRUD.read_industry_query"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -458,13 +460,19 @@
 
                         <div class="item">
                           <a href="#" class="probootstrap-featured-news-box">
-                            <figure class="probootstrap-media"><img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
+                            <figure class="probootstrap-media"><img src="img/event.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
                             <div class="probootstrap-text">
                               <h3><b><%=obj_industry_events_bean.gettitle()%></b></h3>
                               <p><%=obj_industry_events_bean.getdescription()%></p>
+<<<<<<< HEAD
                              <!-- <span class="probootstrap-date"><i class="icon-calendar"></i>Date - <%=start_date%></span> -->
                               <!-- <span class="probootstrap-date"><i class="icon-calendar"></i>Time - <%=start_time%></span> -->
                               <span class="probootstrap-date"><i class="icon-location"></i>Place - <%=obj_industry_events_bean.getcompany()%></span>
+=======
+                              <span class="probootstrap-date" style="color:red;"><i class="icon-calendar" style="color:blue;"></i>Date - <%=start_date%></span>
+                              <span class="probootstrap-date" style="color:red;"><i class="icon-calendar" style="color:blue;"></i>Time - <%=start_time%></span>
+                              <span class="probootstrap-date" style="color:red;"><i class="icon-location" style="color:blue;"></i>Place - <%=obj_industry_events_bean.getcompany()%></span>
+>>>>>>> 630313f5c1a39735609316532abe8179b70d73df
                               
                             </div>
                           </a>
@@ -737,13 +745,13 @@
                         <%
                             read_industry_query obj_read_industry_query = new read_industry_query();
                             List<industry_query_bean> scenarios = obj_read_industry_query.get_scenarios();
-                            Iterator<industry_query_bean> it_list2 = scenarios.iterator();
+                            Iterator<industry_query_bean> it_list3 = scenarios.iterator();
 
                         %> 
                         <%
-                              while (it_list2.hasNext()) {
+                              while (it_list3.hasNext()) {
                                  industry_query_bean obj_industry_query_bean = new industry_query_bean();
-                                 obj_industry_query_bean = it_list2.next();
+                                 obj_industry_query_bean = it_list3.next();
                                  
                             //Start Event DATE TIME Split
                             //String start_event = obj_industry_events_bean.getstart_event();
@@ -762,50 +770,29 @@
                   </div>
                 </div>
                 <div class="text">
-                  <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span>
-                  <h3><%=obj_industry_query_bean.getquery_title()%></h3>
-                  <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                  <p><a href="#" class="btn btn-primary">Explore More</a> <span class="enrolled-count">2,928 students enrolled</span></p>
+                  <span class="probootstrap-meta"><i class="icon-calendar2"></i><%=obj_industry_query_bean.getdate()%></span>
+                  <h3><b><%=obj_industry_query_bean.getquery_title()%></b></h3>
+                  <p><%=obj_industry_query_bean.getdescription()%></p>
+                  <p><a href="#" class="btn btn-primary"><%=obj_industry_query_bean.getcompany_name()%></a> <span class="enrolled-count">2,928 students enrolled</span></p>
                 </div>
               </div>
-                <%
-                     }
-                 %>
+               
              
 
 
             </div>
+
             <div class="col-md-6">
               <div class="probootstrap-service-2 probootstrap-animate">
-                <%-- <div class="image">
+              
+                 <div class="image">
                   <div class="image-bg">
                     <img src="img/img_sm_2.jpg" alt="Free Bootstrap Template by uicookies.com">
                   </div>
-                </div> --%>
-                <div class="text">
-                  <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span>
-                  <h3>Math Major</h3>
-                  <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                  <p><a href="#" class="btn btn-primary">Explore More</a> <span class="enrolled-count">12,582 students enrolled</span></p>
-                </div>
-              </div>
-
+                </div> 
                 
-                 <!--end item -->
-
-              <div class="probootstrap-service-2 probootstrap-animate">
-                <div class="image">
-                  <div class="image-bg">
-                    <img src="img/img_sm_4.jpg" alt="Free Bootstrap Template by uicookies.com">
-                  </div>
-                </div>
-                <div class="text">
-                  <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span>
-                  <h3>English Major</h3>
-                  <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                  <p><a href="#" class="btn btn-primary">Explore More</a> <span class="enrolled-count">9,582 students enrolled</span></p>
-                </div>
               </div>
+<<<<<<< HEAD
 >>>>>>> 4e3f7dc10bcee37af0f0071090bff39795e17b0c
 
                             <div class="service left-icon probootstrap-animate">
@@ -819,6 +806,81 @@
                         </div>
                     </div>
                     <!-- END row -->
+=======
+              
+            </div>
+                
+          </div>
+                <%
+                     }
+                 %>      
+        </div>
+                
+      </section>
+
+                
+      
+      <section class="probootstrap-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
+              <h2>Meet Our Qualified Teachers</h2>
+              <p class="lead">Sed a repudiandae impedit voluptate nam Deleniti dignissimos perspiciatis nostrum porro nesciunt</p>
+            </div>
+          </div>
+          <!-- END row -->
+
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <div class="probootstrap-teacher text-center probootstrap-animate">
+                <figure class="media">
+                  <img src="img/person_1.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
+                </figure>
+                <div class="text">
+                  <h3>Chris Worth</h3>
+                  <p>Physical Education</p>
+                  <ul class="probootstrap-footer-social">
+                    <li class="twitter"><a href="#"><i class="icon-twitter"></i></a></li>
+                    <li class="facebook"><a href="#"><i class="icon-facebook2"></i></a></li>
+                    <li class="instagram"><a href="#"><i class="icon-instagram2"></i></a></li>
+                    <li class="google-plus"><a href="#"><i class="icon-google-plus"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="probootstrap-teacher text-center probootstrap-animate">
+                <figure class="media">
+                  <img src="img/person_5.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
+                </figure>
+                <div class="text">
+                  <h3>Janet Morris</h3>
+                  <p>English Teacher</p>
+                  <ul class="probootstrap-footer-social">
+                    <li class="twitter"><a href="#"><i class="icon-twitter"></i></a></li>
+                    <li class="facebook"><a href="#"><i class="icon-facebook2"></i></a></li>
+                    <li class="instagram"><a href="#"><i class="icon-instagram2"></i></a></li>
+                    <li class="google-plus"><a href="#"><i class="icon-google-plus"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix visible-sm-block visible-xs-block"></div>
+            <div class="col-md-3 col-sm-6">
+              <div class="probootstrap-teacher text-center probootstrap-animate">
+                <figure class="media">
+                  <img src="img/person_6.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive">
+                </figure>
+                <div class="text">
+                  <h3>Linda Reyez</h3>
+                  <p>Math Teacher</p>
+                  <ul class="probootstrap-footer-social">
+                    <li class="twitter"><a href="#"><i class="icon-twitter"></i></a></li>
+                    <li class="facebook"><a href="#"><i class="icon-facebook2"></i></a></li>
+                    <li class="instagram"><a href="#"><i class="icon-instagram2"></i></a></li>
+                    <li class="google-plus"><a href="#"><i class="icon-google-plus"></i></a></li>
+                  </ul>
+>>>>>>> 630313f5c1a39735609316532abe8179b70d73df
                 </div>
             </section>
 
