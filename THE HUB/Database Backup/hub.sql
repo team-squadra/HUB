@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 25, 2019 at 12:40 PM
+-- Generation Time: May 28, 2019 at 06:49 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.0.29
 
@@ -38,21 +38,21 @@ CREATE TABLE `events` (
   `end_event` datetime NOT NULL,
   `description` varchar(200) DEFAULT NULL,
   `type` varchar(20) NOT NULL,
-  `company` varchar(100) NOT NULL
+  `organization` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`id`, `title`, `start_event`, `end_event`, `description`, `type`, `company`) VALUES
-(21, 'hjg', '2019-04-09 13:00:00', '2019-04-22 12:00:00', 'jtfjtf', 'uni', ''),
-(22, 'jygfjgyjfgcj', '2019-04-01 01:05:00', '2019-04-05 17:06:00', '66666', 'uni', ''),
-(24, 'pasiya', '2019-04-01 00:00:00', '2019-04-02 13:00:00', 'gsagasfasf', 'uni', ''),
-(25, 'Hishan Abeysiriwardana', '2019-05-10 01:00:00', '2019-05-12 12:00:00', 'huththooooooooo', 'uni', ''),
-(26, 'rsgrsg', '2019-04-01 01:00:00', '2019-04-02 13:01:00', 'uygjtgyugu', 'uni', ''),
-(27, 'Hishan Abeysiriwardana', '2019-05-01 01:00:00', '2019-05-08 13:00:00', 'hjhjhjhjjh', 'uni', ''),
-(28, 'Hishan Abeysiriwardana', '2019-05-10 01:00:00', '2019-05-12 12:00:00', 'huththooooooooo', 'uni', ''),
+INSERT INTO `events` (`id`, `title`, `start_event`, `end_event`, `description`, `type`, `organization`) VALUES
+(21, 'hjg', '2019-04-09 13:00:00', '2019-04-22 12:00:00', 'jtfjtf', 'uni', 'University of Moratuwa'),
+(22, 'jygfjgyjfgcj', '2019-04-01 01:05:00', '2019-04-05 17:06:00', '66666', 'uni', 'Nsbm Green University'),
+(24, 'pasiya', '2019-04-01 00:00:00', '2019-04-02 13:00:00', 'gsagasfasf', 'uni', 'University of Colombo'),
+(25, 'Hishan Abeysiriwardana', '2019-05-10 01:00:00', '2019-05-12 12:00:00', 'huththooooooooo', 'uni', 'University of Kelaniya'),
+(26, 'rsgrsg', '2019-04-01 01:00:00', '2019-04-02 13:01:00', 'uygjtgyugu', 'uni', 'University of Ruhuna'),
+(27, 'Hishan Abeysiriwardana', '2019-05-01 01:00:00', '2019-05-08 13:00:00', 'hjhjhjhjjh', 'uni', 'University of Peradeniya'),
+(28, 'Hishan Abeysiriwardana', '2019-05-10 01:00:00', '2019-05-12 12:00:00', 'huththooooooooo', 'uni', 'SLIT'),
 (29, 'Git Hub workshop', '2019-05-01 08:00:00', '2019-05-21 12:00:00', 'Giving back to the open-source community ', 'com', 'Arimac Digital'),
 (30, 'Serverless', '2019-06-11 09:00:00', '2019-06-21 13:00:00', 'experience the better serverless ideas', 'com', '99 x Technology'),
 (31, 'Ionic framework workshop', '2019-05-09 10:00:00', '2019-05-24 18:00:00', 'basics about ionic framework', 'com', 'IFS');
