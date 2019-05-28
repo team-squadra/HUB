@@ -13,6 +13,7 @@ import common.DB_Connection;
 import common.User_Bean;
 public class Read_Values {
 public List get_values(){
+	
 	DB_Connection obj_DB_Connection=new DB_Connection();
 	Connection connection=obj_DB_Connection.get_connection();
 	PreparedStatement ps=null;
@@ -24,17 +25,20 @@ public List get_values(){
 	rs=ps.executeQuery();
 	while(rs.next()){
 	  User_Bean obj_User_Bean=new User_Bean();
+
 	  System.out.println(rs.getString("id"));
 	  System.out.println(rs.getString("title"));
 	  System.out.println(rs.getString("start_event"));
 	  System.out.println(rs.getString("end_event"));
-          System.out.println(rs.getString("description"));
+	  System.out.println(rs.getString("description"));
+	  System.out.println(rs.getString("organization"));
           
-	  obj_User_Bean.setid(rs.getString("id"));
-          obj_User_Bean.settitle(rs.getString("title"));
-	  obj_User_Bean.setstart_event(rs.getString("start_event"));
-	  obj_User_Bean.setend_event(rs.getString("end_event"));
-          obj_User_Bean.setdescription(rs.getString("description"));
+	        obj_User_Bean.setid(rs.getString("id"));
+            obj_User_Bean.settitle(rs.getString("title"));
+	        obj_User_Bean.setstart_event(rs.getString("start_event"));
+	        obj_User_Bean.setend_event(rs.getString("end_event"));
+			obj_User_Bean.setdescription(rs.getString("description"));
+			obj_User_Bean.setorganization(rs.getString("organization"));
           
 	list.add(obj_User_Bean);
 	}

@@ -1,8 +1,8 @@
 <%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
 <%@page import="common.User_Bean"%>
 <%@page import="common.industry_events_bean"%>
 <%@page import="common.industry_query_bean"%>
-<%@page import="java.util.List"%>
 <%@page import="CRUD.Read_Values"%>
 <%@page import="CRUD.industry_events"%>
 <%@page import="CRUD.read_industry_query"%>
@@ -107,10 +107,10 @@
                     </ul>
                   </li>
                   
-                  <li><a href="courses.html">Courses</a></li>
+                  <li><a href="industry_events.jsp">All industry Events</a></li>
+                  <li><a href="university_events.jsp">All University Events</a></li>
                   <li><a href="course-single.html">Course Single</a></li>
                   <li><a href="gallery.html">Gallery</a></li>
-                  <li><a href="news.html">News</a></li>
                   <li><a href="about.html">About Us</a></li>
                   
                   
@@ -258,7 +258,7 @@
         </div>
       </section>
 
-      <section class="probootstrap-section probootstrap-section-colored probootstrap-bg probootstrap-custom-heading probootstrap-tab-section" style="background-image: url(img/slider_2.jpg)">
+      <section class="probootstrap-section probootstrap-section-colored probootstrap-bg probootstrap-custom-heading probootstrap-tab-section" style="background-image: url(img/Upcoming_Events2.jpg)">
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-center section-heading probootstrap-animate">
@@ -312,7 +312,7 @@
                               <p><%=obj_industry_events_bean.getdescription()%></p>
                               <span class="probootstrap-date" style="color:red;"><i class="icon-calendar" style="color:blue;"></i>Date - <%=start_date%></span>
                               <span class="probootstrap-date" style="color:red;"><i class="icon-calendar" style="color:blue;"></i>Time - <%=start_time%></span>
-                              <span class="probootstrap-date" style="color:red;"><i class="icon-location" style="color:blue;"></i>Place - <%=obj_industry_events_bean.getcompany()%></span>
+                              <span class="probootstrap-date" style="color:orange;"><i class="icon-location" style="color:blue;"></i>Place - <b><%=obj_industry_events_bean.getorganization()%></b></span>
                               
                             </div>
                           </a>
@@ -322,43 +322,7 @@
                             }
                         %> 
                         <!-- END item -->
-                        <!-- END item -->
-                        <div class="item">
-                          <a href="#" class="probootstrap-featured-news-box">
-                            <figure class="probootstrap-media"><img src="img/img_sm_1.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
-                            <div class="probootstrap-text">
-                              <h3>Tempora consectetur unde nisi</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, officia.</p>
-                              <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                              
-                            </div>
-                          </a>
-                        </div>
-                        <!-- END item -->
-                        <div class="item">
-                          <a href="#" class="probootstrap-featured-news-box">
-                            <figure class="probootstrap-media"><img src="img/img_sm_2.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
-                            <div class="probootstrap-text">
-                              <h3>Tempora consectetur unde nisi</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, dolores.</p>
-                              <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                              
-                            </div>
-                          </a>
-                        </div>
-                        <!-- END item -->
-                        <div class="item">
-                          <a href="#" class="probootstrap-featured-news-box">
-                            <figure class="probootstrap-media"><img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
-                            <div class="probootstrap-text">
-                              <h3>Tempora consectetur unde nisi</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, earum.</p>
-                              <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                              
-                              
-                            </div>
-                          </a>
-                        </div>
+                        
                         <!-- END item -->
                       </div>
                     </div>
@@ -366,7 +330,7 @@
                   <!-- END row -->
                   <div class="row">
                     <div class="col-md-12 text-center">
-                      <p><a href="#" class="btn btn-primary">View all news</a></p>  
+                      <p><a href="industry_events.jsp" class="btn btn-primary">View all Industry Events</a></p>  
                     </div>
                   </div>
                 </div>                               
@@ -396,11 +360,13 @@
                           
                         <div class="item">
                           <a href="#" class="probootstrap-featured-news-box">
-                            <figure class="probootstrap-media"><img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
+                            <figure class="probootstrap-media"><img src="img/uni_events.png" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
                             <div class="probootstrap-text">
                               <h3><%=obj_User_Bean.gettitle()%></h3>
-                              <span class="probootstrap-date"><i class="icon-calendar"></i><%=start_date%></span>
-                              <span class="probootstrap-location"><i class="icon-location2"></i><%=obj_User_Bean.getdescription()%></span>
+                              <p></i><%=obj_User_Bean.getdescription()%></p>
+                              <span class="probootstrap-date" style="color:red;"><i class="icon-calendar" style="color:blue;"></i>Date - <%=start_date%></span>
+                              <span class="probootstrap-date" style="color:red;"><i class="icon-calendar" style="color:blue;"></i>Time - <%=start_time%></span>
+                              <span class="probootstrap-date" style="color:orange;"><i class="icon-location" style="color:blue;"></i>By - <b><%=obj_User_Bean.getorganization()%></b></span>
                             </div>
                           </a>
                         </div>
@@ -415,7 +381,7 @@
                   </div>
                   <div class="row">
                     <div class="col-md-12 text-center">
-                      <p><a href="#" class="btn btn-primary">View all events</a></p>  
+                      <p><a href="university_events.jsp" class="btn btn-primary">View all events</a></p>  
                     </div>
                   </div>
                 </div>
@@ -693,12 +659,12 @@
         </div>
       </section>
       
-      <section class="probootstrap-cta">
+     <section class="probootstrap-cta">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h2 class="probootstrap-animate" data-animate-effect="fadeInRight">Get your admission now!</h2>
-              <a href="#" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate" data-animate-effect="fadeInLeft">Enroll</a>
+              <h2 class="probootstrap-animate" data-animate-effect="fadeInRight">Share Your Organization With Us now!    <i class="icon-hand"></i></h2>
+              <a href="../Sign up.jsp" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate" data-animate-effect="fadeInLeft"> Quickly Enroll</a>
             </div>
           </div>
         </div>
@@ -708,8 +674,8 @@
           <div class="row">
             <div class="col-md-4">
               <div class="probootstrap-footer-widget">
-                <h3>About The School</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro provident suscipit natus a cupiditate ab minus illum quaerat maxime inventore Ea consequatur consectetur hic provident dolor ab aliquam eveniet alias</p>
+                <h3>About The HUB</h3>
+                <p>Our main target is to colloboration between industries , universities and the students. In here you can share your events,workshops,academic calenders,queries with these three parties. A strong collaboration can do lot more than this. </p>
                 <h3>Social</h3>
                 <ul class="probootstrap-footer-social">
                   <li><a href="#"><i class="icon-twitter"></i></a></li>
@@ -725,11 +691,11 @@
               <div class="probootstrap-footer-widget">
                 <h3>Links</h3>
                 <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Courses</a></li>
-                  <li><a href="#">Teachers</a></li>
-                  <li><a href="#">News</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="index.jsp">Home</a></li>
+              <li><a href="industry.jsp">Industry</a></li>
+              <li ><a href="university.jsp">University</a></li>
+              <li><a href="students.jsp">Students</a></li>
+              <li><a href="../signin.jsp">Login</a></li>
                 </ul>
               </div>
             </div>
@@ -753,7 +719,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-8 text-left">
-                <p>&copy; 2017 <a href="https://uicookies.com/">uiCookies:Enlight</a>. All Rights Reserved. Designed &amp; Developed with <i class="icon icon-heart"></i> by <a href="https://uicookies.com/">uicookies.com</a></p>
+                <p>&copy; 2019. All Rights Reserved. Designed &amp; Developed with <i class="icon icon-heart"></i> by <a href="#">THeHUB.com</a></p>
               </div>
               <div class="col-md-4 probootstrap-back-to-top">
                 <p><a href="#" class="js-backtotop">Back to top <i class="icon-arrow-long-up"></i></a></p>

@@ -100,10 +100,10 @@
                     </ul>
                   </li>
 
-                  <li><a href="courses.html">Courses</a></li>
+                  <li><a href="industry_events.jsp">All industry Events</a></li>
+                  <li><a href="university_events.jsp">All University Events</a></li>
                   <li><a href="course-single.html">Course Single</a></li>
                   <li><a href="gallery.html">Gallery</a></li>
-                  <li><a href="news.html">News</a></li>
                   <li><a href="about.html">About Us</a></li>
                   
                 </ul>
@@ -288,8 +288,8 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h2 class="probootstrap-animate" data-animate-effect="fadeInRight">Get your admission now!</h2>
-              <a href="#" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate" data-animate-effect="fadeInLeft">Enroll</a>
+              <h2 class="probootstrap-animate" data-animate-effect="fadeInRight">Be an Our Industry Partner Now !    <i class="icon-hand"></i></h2>
+              <a href="../Sign up.jsp" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate" data-animate-effect="fadeInLeft"> Quickly Enroll</a>
             </div>
           </div>
         </div>
@@ -299,8 +299,8 @@
           <div class="row">
             <div class="col-md-4">
               <div class="probootstrap-footer-widget">
-                <h3>About The School</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro provident suscipit natus a cupiditate ab minus illum quaerat maxime inventore Ea consequatur consectetur hic provident dolor ab aliquam eveniet alias</p>
+                <h3>About The HUB</h3>
+                <p>Our main target is to colloboration between industries , universities and the students. In here you can share your events,workshops,academic calenders,queries with these three parties. A strong collaboration can do lot more than this. </p>
                 <h3>Social</h3>
                 <ul class="probootstrap-footer-social">
                   <li><a href="#"><i class="icon-twitter"></i></a></li>
@@ -316,11 +316,11 @@
               <div class="probootstrap-footer-widget">
                 <h3>Links</h3>
                 <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Courses</a></li>
-                  <li><a href="#">Teachers</a></li>
-                  <li><a href="#">News</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="index.jsp">Home</a></li>
+              <li><a href="industry.jsp">Industry</a></li>
+              <li ><a href="university.jsp">University</a></li>
+              <li><a href="students.jsp">Students</a></li>
+              <li><a href="../signin.jsp">Login</a></li>
                 </ul>
               </div>
             </div>
@@ -344,7 +344,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-8 text-left">
-                <p>&copy; 2017 <a href="https://uicookies.com/">uiCookies:Enlight</a>. All Rights Reserved. Designed &amp; Developed with <i class="icon icon-heart"></i> by <a href="https://uicookies.com/">uicookies.com</a></p>
+                <p>&copy; 2019. All Rights Reserved. Designed &amp; Developed with <i class="icon icon-heart"></i> by <a href="#">THeHUB.com</a></p>
               </div>
               <div class="col-md-4 probootstrap-back-to-top">
                 <p><a href="#" class="js-backtotop">Back to top <i class="icon-arrow-long-up"></i></a></p>

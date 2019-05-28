@@ -30,19 +30,20 @@ public class industry_events {
 	rs=ps.executeQuery();
 	while(rs.next()){
 		industry_events_bean obj_industry_events_bean=new industry_events_bean();
+
 	  System.out.println(rs.getString("id"));
 	  System.out.println(rs.getString("title"));
 	  System.out.println(rs.getString("start_event"));
 	  System.out.println(rs.getString("end_event"));
 		System.out.println(rs.getString("description"));
-		System.out.println(rs.getString("company"));
+		System.out.println(rs.getString("organization"));
           
 					obj_industry_events_bean.setid(rs.getString("id"));
           obj_industry_events_bean.settitle(rs.getString("title"));
 					obj_industry_events_bean.setstart_event(rs.getString("start_event"));
 					obj_industry_events_bean.setend_event(rs.getString("end_event"));
 					obj_industry_events_bean.setdescription(rs.getString("description"));
-					obj_industry_events_bean.setcompany(rs.getString("company"));
+					obj_industry_events_bean.setorganization(rs.getString("organization"));
           
 	com_events.add(obj_industry_events_bean);
 	}
