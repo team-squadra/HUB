@@ -1,9 +1,13 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
+<%@page import="common.User_Bean"%>
+<%@page import="CRUD.Read_Values"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>uiCookies:Enlight &mdash; Free Bootstrap Theme, Free Responsive Bootstrap Website Template</title>
+    <title>The Hub</title>
     <meta name="description" content="Free Bootstrap Theme by uicookies.com">
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
     
@@ -16,6 +20,18 @@
       <script src="js/vendor/html5shiv.min.js"></script>
       <script src="js/vendor/respond.min.js"></script>
     <![endif]-->
+     <style>
+      #indu{
+        font-size: 100px;
+        letter-spacing: 1px;
+      }
+
+      #home_name{
+        font-size: 40px;
+        font-weight: bold;
+        padding: 10px;
+      }
+    </style>
   </head>
   <body>
 
@@ -33,9 +49,9 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-9 col-md-9 col-sm-9 probootstrap-top-quick-contact-info">
-              <span><i class="icon-location2"></i>Brooklyn, NY 10036, United States</span>
+              <span><i class="icon-location2"></i>Next Generation Colloboration</span>
               <span><i class="icon-phone2"></i>+1-123-456-7890</span>
-              <span><i class="icon-mail"></i>info@uicookies.com</span>
+              <span><i class="icon-mail"></i>info@thehub.com</span>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 probootstrap-top-social">
               <ul>
@@ -61,35 +77,44 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html" title="uiCookies:Enlight">Enlight</a>
+             <br>
+            <a id="home_name" class="probootstrap-heading probootstrap-animate" href="index.jsp" title="HOME PAGE">THE HUB</a>
           </div>
 
           <div id="navbar-collapse" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="courses.html">Courses</a></li>
-              <li><a href="teachers.html">Teachers</a></li>
-              <li><a href="events.html">Events</a></li>
+
+              <li><a href="index.jsp">Home</a></li>
+              <li><a href="industry.jsp">Industry</a></li>
+              <li ><a href="university.jsp">University</a></li>
+              <li><a href="students.jsp">Students</a></li>
+              
               <li class="dropdown">
-                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Pages</a>
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">More Pages</a>
                 <ul class="dropdown-menu">
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="courses.html">Courses</a></li>
-                  <li><a href="course-single.html">Course Single</a></li>
-                  <li><a href="gallery.html">Gallery</a></li>
+
                   <li class="dropdown-submenu dropdown">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Sub Menu</span></a>
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Academic calenders</span></a>
                     <ul class="dropdown-menu">
+
+                     <li><a href="..\Cal_insert.jsp">Add An Event</a></li>
+                      <li><a href="http://localhost/calender/index.php">View Calender</a></li>
+                      <li><a href="..\Calender\Cal_edit_delete.jsp">Edit Or Delete Events</a></li>
                       <li><a href="#">Second Level Menu</a></li>
-                      <li><a href="#">Second Level Menu</a></li>
-                      <li><a href="#">Second Level Menu</a></li>
-                      <li><a href="#">Second Level Menu</a></li>
+
                     </ul>
                   </li>
-                  <li class="active"><a href="news.html">News</a></li>
+                  <li><a href="industry_events.jsp">All Industry Events</a></li>
+                  <li><a href="university_events.jsp">All University Events</a></li>
+                  <li><a href="course-single.html">Course Single</a></li>
+                  <li><a href="gallery.html">Gallery</a></li>
+                  <li><a href="about.html">About Us</a></li>
                 </ul>
               </li>
-              <li><a href="contact.html">Contact</a></li>
+                  <li><a href="../signin.jsp">Login</a></li>
+                </ul>
+              </li>
+              <%-- <li><a href="contact.html">Contact</a></li> --%>
             </ul>
           </div>
         </div>
@@ -99,7 +124,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-left section-heading probootstrap-animate">
-              <h1>School Events</h1>
+              <h1>All The University Events</h1>
             </div>
           </div>
         </div>
@@ -120,7 +145,7 @@
                   </p>
                   <p><a href="#" class="btn btn-primary">Learn More</a></p>
                 </div>
-                <div class="probootstrap-image probootstrap-animate" style="background-image: url(img/slider_4.jpg)">
+                <div class="probootstrap-image probootstrap-animate" style="background-image: url(img/773651.jpg)">
                   <a href="https://vimeo.com/45830194" class="btn-video popup-vimeo"><i class="icon-play3"></i></a>
                 </div>
               </div>
@@ -135,19 +160,44 @@
       <section class="probootstrap-section">
         <div class="container">
 
+                       <%
+                            Read_Values obj_Read_Values = new Read_Values();
+                            List<User_Bean> list = obj_Read_Values.get_values();
+                            Iterator<User_Bean> it_list = list.iterator();
+
+                        %> 
+                        <%
+                              while (it_list.hasNext()) {
+                                 User_Bean obj_User_Bean = new User_Bean();
+                                 obj_User_Bean = it_list.next();
+                                 
+                            //Start Event DATE TIME Split
+                            String start_event = obj_User_Bean.getstart_event();
+                            String[] start_parts = start_event.split(" ");
+                            String start_date = start_parts[0];
+                            String start_time = start_parts[1];
+                        %>
+
           <div class="row">
             <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
               <a href="#" class="probootstrap-featured-news-box">
-                <figure class="probootstrap-media"><img src="img/img_sm_1.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
+                <figure class="probootstrap-media"><img src="img/uni_events.png" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
                 <div class="probootstrap-text">
-                  <h3>Tempora consectetur unde nisi</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, quaerat?</p>
-                  <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                  <span class="probootstrap-location"><i class="icon-user2"></i>By Admin</span>
+                  <h3><%=obj_User_Bean.gettitle()%></h3>
+                  <p></i><%=obj_User_Bean.getdescription()%></p>
+                  <span class="probootstrap-date" style="color:red;"><i class="icon-calendar" style="color:blue;"></i>Date - <%=start_date%></span>
+                  <span class="probootstrap-date" style="color:red;"><i class="icon-calendar" style="color:blue;"></i>Time - <%=start_time%></span>
+                  <span class="probootstrap-date" style="color:orange;"><i class="icon-location" style="color:blue;"></i>By - <b><%=obj_User_Bean.getorganization()%></b></span>
                 </div>
               </a>
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
+
+                        <%
+                            }
+                        %>
+                        <!-- END item --> 
+
+            <%-- <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 probootstrap-animate">
               <a href="#" class="probootstrap-featured-news-box">
                 <figure class="probootstrap-media"><img src="img/img_sm_2.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
                 <div class="probootstrap-text">
@@ -209,7 +259,7 @@
             </div>
             <div class="clearfix visible-sm-block visible-xs-block"></div>
 
-          </div>
+          </div> --%>
 
         </div>
       </section>
@@ -218,8 +268,8 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h2 class="probootstrap-animate" data-animate-effect="fadeInRight">Get your admission now!</h2>
-              <a href="#" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate" data-animate-effect="fadeInLeft">Enroll</a>
+              <h2 class="probootstrap-animate" data-animate-effect="fadeInRight">Post your University Events now!    <i class="icon-hand"></i></h2>
+              <a href="../Sign up.jsp" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate" data-animate-effect="fadeInLeft"> Quickly Enroll</a>
             </div>
           </div>
         </div>
@@ -229,8 +279,8 @@
           <div class="row">
             <div class="col-md-4">
               <div class="probootstrap-footer-widget">
-                <h3>About The School</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro provident suscipit natus a cupiditate ab minus illum quaerat maxime inventore Ea consequatur consectetur hic provident dolor ab aliquam eveniet alias</p>
+                <h3>About The HUB</h3>
+                <p>Our main target is to colloboration between industries , universities and the students. In here you can share your events,workshops,academic calenders,queries with these three parties. A strong collaboration can do lot more than this. </p>
                 <h3>Social</h3>
                 <ul class="probootstrap-footer-social">
                   <li><a href="#"><i class="icon-twitter"></i></a></li>
@@ -246,11 +296,11 @@
               <div class="probootstrap-footer-widget">
                 <h3>Links</h3>
                 <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Courses</a></li>
-                  <li><a href="#">Teachers</a></li>
-                  <li><a href="#">News</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="index.jsp">Home</a></li>
+              <li><a href="industry.jsp">Industry</a></li>
+              <li ><a href="university.jsp">University</a></li>
+              <li><a href="students.jsp">Students</a></li>
+              <li><a href="../signin.jsp">Login</a></li>
                 </ul>
               </div>
             </div>
@@ -266,6 +316,25 @@
             </div>
            
           </div>
+          <!-- END row -->
+          
+        </div>
+
+        <div class="probootstrap-copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 text-left">
+                <p>&copy; 2019. All Rights Reserved. Designed &amp; Developed with <i class="icon icon-heart"></i> by <a href="#">THeHUB.com</a></p>
+              </div>
+              <div class="col-md-4 probootstrap-back-to-top">
+                <p><a href="#" class="js-backtotop">Back to top <i class="icon-arrow-long-up"></i></a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
           <!-- END row -->
           
         </div>

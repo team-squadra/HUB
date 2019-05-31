@@ -9,7 +9,9 @@ public class User_Bean {
 	private String title;
 	private String start_event;
 	private String end_event;
-        private String description;
+	private String description;
+	private String organization;
+
 	public String getid() {
 		return id;
 	}
@@ -39,5 +41,11 @@ public class User_Bean {
 	}
 	public void setdescription(String description) {
 		this.description = description;
+	}
+	public String getorganization() {
+		return organization;
+	}
+	public void setorganization(String organization) {
+		this.organization = organization;
 	}
 }
