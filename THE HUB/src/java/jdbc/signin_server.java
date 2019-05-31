@@ -86,44 +86,31 @@ public class signin_server extends HttpServlet {
             String password = request.getParameter("password");
             String dbUsername = null;
             String dbPassword = null;
+
+            DB_Connection obj_DB_Connection = new DB_Connection();
+            Connection connection = obj_DB_Connection.get_connection();
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
             String sql = "select username,password from login where username=? and password=?";
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hub", "root", "");
-            PreparedStatement ps = conn.prepareStatement(sql);
+            ps = connection.prepareStatement(sql);
             ps.setString(1, username);
             ps.setString(2, password);
-            ResultSet rs = ps.executeQuery();
+            rs = ps.executeQuery();
             while (rs.next()) {
                 dbUsername = rs.getString(1);
                 dbPassword = rs.getString(2);
             }
             if (username.equals(dbUsername) && password.equals(dbPassword)) {
                 out.println("<script type=\"text/javascript\">");
-                out.println("location='index.jsp';");
+                out.println("location='Homepage/index.jsp';");
                 out.println("</script>");
-
-                DB_Connection obj_DB_Connection = new DB_Connection();
-                Connection connection = obj_DB_Connection.get_connection();
-                PreparedStatement ps2 = null;
-                try {
-                    String querry = "INSERT INTO current_user set id=3,username=?,type=?";
-                    ps2 = connection.prepareStatement(querry);
-                    ps2.setInt(1, 8);
-                    ps2.setString(2, username);
-                    ps2.setString(3, password);
-                    //ps.setString(5, id);;
-                    out.println("<script type=\"text/javascript\">");
-                    out.println("alert('Username Or Password is wrong huththo!!');");
-                    ps.executeUpdate();
-                } catch (Exception e) {
-                    System.out.println(e);
-                    out.println("<script type=\"text/javascript\">");
-                    out.println("alert('Username Or Password is wrong !!');");
-                }
+                
             } else {
                 out.println("<script type=\"text/javascript\">");
                 out.println("alert('Username Or Password is wrong !!');");
-                out.println("location='index.jsp';");
+                out.println("location='signin.jsp';");
                 out.println("</script>");
             }
 

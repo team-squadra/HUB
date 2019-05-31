@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 25, 2019 at 12:40 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.0.29
+-- Generation Time: May 31, 2019 at 09:06 PM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -104,7 +104,11 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `username`, `password`, `email`, `type`) VALUES
-(49, 'sudesh', '1234', 'sudeshfernandez98@gmail.com', 'University');
+(49, 'sudesh', '1234', 'sudeshfernandez98@gmail.com', 'University'),
+(50, 'gg', 'gg', 'harlyrox3333@gmail.com', 'University'),
+(51, 'tt', 'tt', 'anubagya333@gmail.com', 'Industry'),
+(52, 'gg', '55', 'hishansjc@gmail.com', 'University'),
+(53, 'hh', 'hh', 'kavishka3333@gmail.com', 'University');
 
 -- --------------------------------------------------------
 
@@ -130,6 +134,30 @@ INSERT INTO `scenarios` (`id`, `query_title`, `description`, `company_name`, `da
 (2, 'Air pollution management system', 'The control of air pollution is one of the principal areas of pollution control, along ... of air pollution from mobile sources is described in emission-control system.) ...', '99 x Technology', '2019-05-07'),
 (3, 'Food delivery system', 'The company delivers meal kits to people for home food preparation. DoorDash, which would later become a Y-Combinator summer 2013 food delivery company, issues its first delivery. Instacart, which offers an app that lets users order groceries and delivers them, is founded.', 'WSO2', '2019-05-17'),
 (4, 'Motion graphics game', 'Our art and design teams work together to produce animatics and pre-visualisation work which fits seamlessly with the narrative and creative style of a game, ...\r\n', 'Arimac Digital', '2019-05-21');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student_reg`
+--
+
+DROP TABLE IF EXISTS `student_reg`;
+CREATE TABLE `student_reg` (
+  `id` int(10) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` int(10) NOT NULL,
+  `faculty` varchar(50) NOT NULL,
+  `Age` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `student_reg`
+--
+
+INSERT INTO `student_reg` (`id`, `firstname`, `lastname`, `email`, `phone`, `faculty`, `Age`) VALUES
+(1, 'Hishan', 'Abeysiriwardana', 'hishansjc@gmail.com', 713677319, 'dsagfsa', 13);
 
 -- --------------------------------------------------------
 
@@ -184,6 +212,12 @@ ALTER TABLE `scenarios`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `student_reg`
+--
+ALTER TABLE `student_reg`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `universities`
 --
 ALTER TABLE `universities`
@@ -209,13 +243,19 @@ ALTER TABLE `industries`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `scenarios`
 --
 ALTER TABLE `scenarios`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `student_reg`
+--
+ALTER TABLE `student_reg`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `universities`

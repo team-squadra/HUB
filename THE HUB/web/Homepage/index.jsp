@@ -310,9 +310,9 @@
                             <div class="probootstrap-text">
                               <h3><b><%=obj_industry_events_bean.gettitle()%></b></h3>
                               <p><%=obj_industry_events_bean.getdescription()%></p>
-                              <span class="probootstrap-date" style="color:red;"><i class="icon-calendar" style="color:blue;"></i>Date - <%=start_date%></span>
-                              <span class="probootstrap-date" style="color:red;"><i class="icon-calendar" style="color:blue;"></i>Time - <%=start_time%></span>
-                              <span class="probootstrap-date" style="color:red;"><i class="icon-location" style="color:blue;"></i>Place - <%=obj_industry_events_bean.getcompany()%></span>
+                              <span class="probootstrap-date"><i class="icon-calendar"></i>Date - <%=start_date%></span>
+                              <span class="probootstrap-date"><i class="icon-clock2"></i>Time - <%=start_time%></span>
+                              <span class="probootstrap-date"><i class="icon-location"></i>Place - <%=obj_industry_events_bean.getcompany()%></span>
                               
                             </div>
                           </a>
@@ -321,44 +321,6 @@
                         <%
                             }
                         %> 
-                        <!-- END item -->
-                        <!-- END item -->
-                        <div class="item">
-                          <a href="#" class="probootstrap-featured-news-box">
-                            <figure class="probootstrap-media"><img src="img/img_sm_1.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
-                            <div class="probootstrap-text">
-                              <h3>Tempora consectetur unde nisi</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, officia.</p>
-                              <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                              
-                            </div>
-                          </a>
-                        </div>
-                        <!-- END item -->
-                        <div class="item">
-                          <a href="#" class="probootstrap-featured-news-box">
-                            <figure class="probootstrap-media"><img src="img/img_sm_2.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
-                            <div class="probootstrap-text">
-                              <h3>Tempora consectetur unde nisi</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, dolores.</p>
-                              <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                              
-                            </div>
-                          </a>
-                        </div>
-                        <!-- END item -->
-                        <div class="item">
-                          <a href="#" class="probootstrap-featured-news-box">
-                            <figure class="probootstrap-media"><img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
-                            <div class="probootstrap-text">
-                              <h3>Tempora consectetur unde nisi</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, earum.</p>
-                              <span class="probootstrap-date"><i class="icon-calendar"></i>July 9, 2017</span>
-                              
-                              
-                            </div>
-                          </a>
-                        </div>
                         <!-- END item -->
                       </div>
                     </div>
@@ -396,11 +358,14 @@
                           
                         <div class="item">
                           <a href="#" class="probootstrap-featured-news-box">
-                            <figure class="probootstrap-media"><img src="img/img_sm_3.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
-                            <div class="probootstrap-text">
-                              <h3><%=obj_User_Bean.gettitle()%></h3>
+                            <figure class="probootstrap-media"><img src="img/up_event.jpg" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></figure>
+                            <div class="probootstrap-text">                     
+                              <h3><b><%=obj_User_Bean.gettitle()%></b></h3>
+                              <p><%=obj_User_Bean.getdescription()%></p>
+
                               <span class="probootstrap-date"><i class="icon-calendar"></i><%=start_date%></span>
-                              <span class="probootstrap-location"><i class="icon-location2"></i><%=obj_User_Bean.getdescription()%></span>
+                              <span class="probootstrap-date"><i class="icon-clock2"></i>Time - <%=start_time%></span>
+                              <span class="probootstrap-location"><i class="icon-location"></i><%=obj_User_Bean.getdescription()%></span>
                             </div>
                           </a>
                         </div>
