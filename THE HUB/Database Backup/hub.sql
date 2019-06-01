@@ -3,15 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD
--- Generation Time: May 31, 2019 at 09:06 PM
+-- Generation Time: Jun 01, 2019 at 06:10 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
-=======
--- Generation Time: May 28, 2019 at 06:49 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.0.29
->>>>>>> 9b911b9550db9af9531bee34a257c61cc86a21df
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -110,11 +104,7 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `username`, `password`, `email`, `type`) VALUES
-(49, 'sudesh', '1234', 'sudeshfernandez98@gmail.com', 'University'),
-(50, 'gg', 'gg', 'harlyrox3333@gmail.com', 'University'),
-(51, 'tt', 'tt', 'anubagya333@gmail.com', 'Industry'),
-(52, 'gg', '55', 'hishansjc@gmail.com', 'University'),
-(53, 'hh', 'hh', 'kavishka3333@gmail.com', 'University');
+(49, 'sudesh', '1234', 'sudeshfernandez98@gmail.com', 'University');
 
 -- --------------------------------------------------------
 
@@ -163,7 +153,8 @@ CREATE TABLE `student_reg` (
 --
 
 INSERT INTO `student_reg` (`id`, `firstname`, `lastname`, `email`, `phone`, `faculty`, `Age`) VALUES
-(1, 'Hishan', 'Abeysiriwardana', 'hishansjc@gmail.com', 713677319, 'dsagfsa', 13);
+(1, 'Hishan', 'Abeysiriwardana', 'hishansjc@gmail.com', 713677319, 'dsagfsa', 13),
+(2, 'Hishan', 'Abeysiriwardana', 'harlyrox3333@gmail.com', 73543635, 'dsagfsa', 13);
 
 -- --------------------------------------------------------
 
@@ -249,7 +240,7 @@ ALTER TABLE `industries`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `scenarios`
@@ -261,7 +252,7 @@ ALTER TABLE `scenarios`
 -- AUTO_INCREMENT for table `student_reg`
 --
 ALTER TABLE `student_reg`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `universities`
