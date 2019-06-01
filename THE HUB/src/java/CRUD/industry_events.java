@@ -25,7 +25,7 @@ public class industry_events {
 	ResultSet rs=null;
 	List com_events=new ArrayList();
 	try {	
-	String querry="select * from events where type= 'com'";
+	String querry="select * from events where type= 'com' order by id limit 0, 6";//retrive only 3 rows
 	ps=connection.prepareStatement(querry);		
 	rs=ps.executeQuery();
 	while(rs.next()){

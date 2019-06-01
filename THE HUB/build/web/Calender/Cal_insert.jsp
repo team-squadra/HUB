@@ -118,10 +118,10 @@
 
                     </ul>
                   </li>
-                  <li><a href="courses.html">Courses</a></li>
+                  <li><a href="../Homepage/industry_events.jsp">All industry Events</a></li>
+                  <li><a href="../Homepage/university_events.jsp">All University Events</a></li>
                   <li><a href="../Homepage/course-single.html">Course Single</a></li>
                   <li><a href="../Homepage/gallery.html">Gallery</a></li>
-                  <li><a href="../Homepage/news.html">News</a></li>
                   <li><a href="../Homepage/about.html">About Us</a></li>
                 </ul>
               </li>

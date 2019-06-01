@@ -11,8 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import common.DB_Connection;
 import common.User_Bean;
+
 public class Read_Values {
-public List get_values(){
+    public List get_values(){
 	
 	DB_Connection obj_DB_Connection=new DB_Connection();
 	Connection connection=obj_DB_Connection.get_connection();
@@ -20,7 +21,10 @@ public List get_values(){
 	ResultSet rs=null;
 	List list=new ArrayList();
 	try {	
-	String querry="select * from events where type= 'uni'";
+	String querry="select * from events  where type= 'uni' order by id limit 0, 6"; //retrive only 3 rows
+
+	// SELECT * FROM master_name ORDER BY lastname LIMIT 0, 5;
+
 	ps=connection.prepareStatement(querry);		
 	rs=ps.executeQuery();
 	while(rs.next()){

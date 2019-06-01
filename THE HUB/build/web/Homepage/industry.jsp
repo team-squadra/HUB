@@ -92,7 +92,7 @@
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Academic calenders</span></a>
                     <ul class="dropdown-menu">
 
-                      <li><a href="..\Cal_insert.jsp">Add An Event</a></li>
+                      <li><a href="..\Calender\Cal_insert.jsp">Add An Event</a></li>
                       <li><a href="http://localhost/calender/index.php">View Calender</a></li>
                       <li><a href="..\Calender\Cal_edit_delete.jsp">Edit Or Delete Events</a></li>
                       <li><a href="#">Second Level Menu</a></li>

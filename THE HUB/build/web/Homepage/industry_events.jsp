@@ -1,7 +1,7 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
 <%@page import="common.industry_events_bean"%>
-<%@page import="CRUD.industry_events"%>
+<%@page import="CRUD.all_industry_events"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -93,7 +93,7 @@
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Academic calenders</span></a>
                     <ul class="dropdown-menu">
 
-                     <li><a href="..\Cal_insert.jsp">Add An Event</a></li>
+                     <li><a href="..\Calender\Cal_insert.jsp">Add An Event</a></li>
                       <li><a href="http://localhost/calender/index.php">View Calender</a></li>
                       <li><a href="..\Calender\Cal_edit_delete.jsp">Edit Or Delete Events</a></li>
                       <li><a href="#">Second Level Menu</a></li>
@@ -157,8 +157,8 @@
         <div class="container">
 
                         <%
-                            industry_events obj_industry_events = new industry_events();
-                            List<industry_events_bean> com_events = obj_industry_events.get_com_events();
+                            all_industry_events obj_all_industry_events = new all_industry_events();
+                            List<industry_events_bean> com_events = obj_all_industry_events.get_com_events();
                             Iterator<industry_events_bean> it_list2 = com_events.iterator();
 
                         %> 
