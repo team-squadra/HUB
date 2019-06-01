@@ -66,6 +66,7 @@
 .icon-calendar3:before {
   content: "\e00d";
 }
+
 .icon-presentation:before {
   content: "\e00e";
 }
@@ -1227,7 +1228,10 @@
 .icon-ticket:before {
   content: "\ea2c";
 }
-.icon-time-slot:before {
+.icon-ticket:before {
+  content: "\ea2c";
+}
+.icon-time:before {
   content: "\ea2d";
 }
 .icon-tools:before {

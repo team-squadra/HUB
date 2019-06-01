@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2019 at 06:49 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.0.29
+-- Generation Time: Jun 01, 2019 at 06:10 AM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -134,6 +134,31 @@ INSERT INTO `scenarios` (`id`, `query_title`, `description`, `company_name`, `da
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `student_reg`
+--
+
+DROP TABLE IF EXISTS `student_reg`;
+CREATE TABLE `student_reg` (
+  `id` int(10) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` int(10) NOT NULL,
+  `faculty` varchar(50) NOT NULL,
+  `Age` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `student_reg`
+--
+
+INSERT INTO `student_reg` (`id`, `firstname`, `lastname`, `email`, `phone`, `faculty`, `Age`) VALUES
+(1, 'Hishan', 'Abeysiriwardana', 'hishansjc@gmail.com', 713677319, 'dsagfsa', 13),
+(2, 'Hishan', 'Abeysiriwardana', 'harlyrox3333@gmail.com', 73543635, 'dsagfsa', 13);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `universities`
 --
 
@@ -184,6 +209,12 @@ ALTER TABLE `scenarios`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `student_reg`
+--
+ALTER TABLE `student_reg`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `universities`
 --
 ALTER TABLE `universities`
@@ -216,6 +247,12 @@ ALTER TABLE `login`
 --
 ALTER TABLE `scenarios`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `student_reg`
+--
+ALTER TABLE `student_reg`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `universities`
