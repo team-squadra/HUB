@@ -226,7 +226,7 @@
           <div class="row">
             <div class="col-md-12">
               <h2 class="probootstrap-animate" data-animate-effect="fadeInRight">Post your Industry Events now!    <i class="icon-hand"></i></h2>
-              <a href="../Sign up.jsp" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate" data-animate-effect="fadeInLeft"> Quickly Enroll</a>
+              <a href="../Student/student_reg.jsp" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate" data-animate-effect="fadeInLeft"> Quickly Enroll</a>
             </div>
           </div>
         </div>

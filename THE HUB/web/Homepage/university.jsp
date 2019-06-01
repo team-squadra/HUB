@@ -290,7 +290,7 @@
             <div class="col-md-12">
 <<<<<<< HEAD
               <h2 class="probootstrap-animate" data-animate-effect="fadeInRight">Get your admission now!</h2>
-              <a href="http://localhost:8084/THE_HUB/student.jsp" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate" data-animate-effect="fadeInLeft">Enroll</a>
+              <a href="#" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate" data-animate-effect="fadeInLeft">Enroll</a>
 =======
               <h2 class="probootstrap-animate" data-animate-effect="fadeInRight">Be an Our University Partner Now !    <i class="icon-hand"></i></h2>
               <a href="../Sign up.jsp" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate" data-animate-effect="fadeInLeft"> Quickly Enroll</a>

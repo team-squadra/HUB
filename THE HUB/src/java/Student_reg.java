@@ -112,7 +112,7 @@ public class Student_reg extends HttpServlet {
                 ps.executeUpdate();
                 out.println("<script type=\"text/javascript\">");
                 out.println("alert('sucess!!');");
-                out.println("location='index.jsp';");
+                out.println("location='Homepage/students.jsp';");
                 out.println("</script>");
             } catch (SQLException ex) {
                 out.println(ex);
