@@ -117,17 +117,19 @@ public class Cal_insert_sevlet extends HttpServlet {
             PreparedStatement ps = null;
             
             try {
-                String sql = "insert into events (title,start_event,end_event,description) values(?,?,?,?)";
+                String sql = "insert into events (title,start_event,end_event,description,type,organization) values(?,?,?,?,?,?)";
                 Class.forName("com.mysql.jdbc.Driver");
                 ps = connection.prepareStatement(sql);
                 ps.setString(1, eventname);
                 ps.setString(2, start_event);
                 ps.setString(3, end_event);
                 ps.setString(4, discription);
+                ps.setString(5, "uni");
+                ps.setString(6, "Nsbm Green University");
                 ps.executeUpdate();
                 out.println("<script type=\"text/javascript\">");
                 out.println("alert('sucess!!');");
-                out.println("location='index.jsp';");
+                out.println("location='Homepage/index.jsp';");
                 out.println("</script>");
             } catch (SQLException ex) {
                 out.println(ex);

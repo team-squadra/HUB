@@ -12,23 +12,23 @@
     <title>Add An Event</title>
 
     <!-- Icons font CSS-->
-    <link href="Calender/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="Calender/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
     <!-- Vendor CSS-->
-    <link href="Calender/vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="Calender/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="Calender/css/main.css" rel="stylesheet" media="all">
+    <link href="css/main.css" rel="stylesheet" media="all">
 
     <!--header css-->
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="Homepage/css/styles-merged.css">
-    <link rel="stylesheet" href="Homepage/css/style.min.css">
-    <link rel="stylesheet" href="Homepage/css/custom.css">
+    <link rel="stylesheet" href="../Homepage/css/styles-merged.css">
+    <link rel="stylesheet" href="../Homepage/css/style.min.css">
+    <link rel="stylesheet" href="../Homepage/css/custom.css">
 
     <!--[if lt IE 9]>
       <script src="js/vendor/html5shiv.min.js"></script>
@@ -37,7 +37,7 @@
 
     <style>
         .bg-blue {
-          background-image: url('Calender/images/fff.jpg');
+          background-image: url('images/fff.jpg');
         }
 
         #home_name{
@@ -100,10 +100,10 @@
           <div id="navbar-collapse" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
 
-              <li><a href="Homepage\index.jsp">Home</a></li>
-              <li><a href="Homepage\industry.jsp">Industry</a></li>
-              <li ><a href="Homepage\university.jsp">University</a></li>
-              <li><a href="Homepage\students.jsp">Students</a></li>
+              <li><a href="../Homepage/index.jsp">Home</a></li>
+              <li><a href="../Homepage/industry.jsp">Industry</a></li>
+              <li ><a href="../Homepage/university.jsp">University</a></li>
+              <li><a href="../Homepage/students.jsp">Students</a></li>
               
               <li class="dropdown">
                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">More Pages</a>
@@ -113,16 +113,16 @@
                     <ul class="dropdown-menu">
 
                       <li><a href="http://localhost/calender/index.php">View Calender</a></li>
-                      <li><a href="..\Calender\Cal_edit_delete.jsp">Edit Or Delete Events</a></li>
+                      <li><a href="Cal_edit_delete.jsp">Edit Or Delete Events</a></li>
                       <li><a href="#">Second Level Menu</a></li>
 
                     </ul>
                   </li>
                   <li><a href="courses.html">Courses</a></li>
-                  <li><a href="Homepage\course-single.html">Course Single</a></li>
-                  <li><a href="Homepage\gallery.html">Gallery</a></li>
-                  <li><a href="Homepage\news.html">News</a></li>
-                  <li><a href="Homepage\about.html">About Us</a></li>
+                  <li><a href="../Homepage/course-single.html">Course Single</a></li>
+                  <li><a href="../Homepage/gallery.html">Gallery</a></li>
+                  <li><a href="../Homepage/news.html">News</a></li>
+                  <li><a href="../Homepage/about.html">About Us</a></li>
                 </ul>
               </li>
               <li><a href="../signin.jsp">Login</a></li>
@@ -139,7 +139,7 @@
                 <div class="card-body">
                     <h2 class="title">Create An Event</h2>
                     
-                    <form action="Cal_insert_sevlet" method="post">
+                    <form action="../Cal_insert_sevlet" method="post">
                         
                         <div class="input-group">
                             <input class="input--style-2" type="text" placeholder="Event Name" name="name">
@@ -189,22 +189,22 @@
     </div>
 
     <!-- Jquery JS-->
-    <script src="Calender/vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
     <!-- Vendor JS-->
-    <script src="Calender/vendor/select2/select2.min.js"></script>
-    <script src="Calender/vendor/datepicker/moment.min.js"></script>
-    <script src="Calender/vendor/datepicker/daterangepicker.js"></script>
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
 
     <!-- Main JS-->
-    <script src="Calender/js/global.js"></script>
-    <script src="Calender/js/global01.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/global01.js"></script>
 
     <!-- END wrapper -->
     
 
-    <script src="Homepage/js/scripts.min.js"></script>
-    <script src="Homepage/js/main.min.js"></script>
-    <script src="Homepage/js/custom.js"></script>
+    <script src="../Homepagejs/scripts.min.js"></script>
+    <script src="../Homepage/js/main.min.js"></script>
+    <script src="../Homepage/js/custom.js"></script>
 
 </body>
 
