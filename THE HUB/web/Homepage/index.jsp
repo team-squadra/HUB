@@ -312,7 +312,7 @@
                               <p><%=obj_industry_events_bean.getdescription()%></p>
                               <span class="probootstrap-date" style="color:red;"><i class="icon-calendar" style="color:blue;"></i>Date - <%=start_date%></span>
                               <span class="probootstrap-date" style="color:red;"><i class="icon-calendar" style="color:blue;"></i>Time - <%=start_time%></span>
-                              <span class="probootstrap-date" style="color:orange;"><i class="icon-location" style="color:blue;"></i>Place - <b><%=obj_industry_events_bean.getorganization()%></b></span>
+                              <span class="probootstrap-date" style="color:orange;"><i class="icon-location" style="color:blue;"></i>By - <b><%=obj_industry_events_bean.getorganization()%></b></span>
                               
                             </div>
                           </a>
@@ -381,7 +381,7 @@
                   </div>
                   <div class="row">
                     <div class="col-md-12 text-center">
-                      <p><a href="university_events.jsp" class="btn btn-primary">View all events</a></p>  
+                      <p><a href="university_events.jsp" class="btn btn-primary">View all University events</a></p>  
                     </div>
                   </div>
                 </div>
