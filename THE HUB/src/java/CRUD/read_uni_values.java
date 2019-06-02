@@ -37,13 +37,18 @@ public class read_uni_values {
 	  System.out.println(rs.getString("uni_name"));
 	  System.out.println(rs.getString("description"));
 	  System.out.println(rs.getString("stud_count"));
-	  //System.out.println(rs.getBlob("com_pic"));
+	  System.out.println(rs.getString("uni_logo"));
+          System.out.println(rs.getString("uni_img_1"));
+          System.out.println(rs.getString("uni_img_2"));
           
       obj_uni_bean.setid(rs.getString("id"));
       obj_uni_bean.set_uni_name(rs.getString("uni_name"));
       obj_uni_bean.set_discription(rs.getString("description"));
       obj_uni_bean.set_stud_count(rs.getString("stud_count"));
-	  //obj_uni_bean.set_com_pic(rs.getBlob("com_pic"));
+      obj_uni_bean.set_uni_logo(rs.getString("uni_logo"));
+      obj_uni_bean.set_uni_img_1(rs.getString("uni_img_1"));
+      obj_uni_bean.set_uni_img_2(rs.getString("uni_img_2"));
+       
           
 	list.add(obj_uni_bean);
 	}

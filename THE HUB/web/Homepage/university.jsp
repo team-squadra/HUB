@@ -165,7 +165,7 @@
               <div class="probootstrap-service-2 probootstrap-animate">
                 <div class="image">
                   <div class="image-bg">
-                    <img src="" alt="Free Bootstrap Template by uicookies.com">
+                      <img src="../Univercity/img/uni/<%=obj_uni_bean.get_uni_logo()%>" style="width: 150px; height: auto;" alt="uni logo" >
                   </div>
                 </div>
                 <div class="text">
@@ -188,11 +188,11 @@
           <div class="row">
             <div class="col-md-6">
               <div class="probootstrap-service-2 probootstrap-animate">
-                <%-- <div class="image">
+                <div class="image">
                   <div class="image-bg">
-                    <img src="img/img_sm_1.jpg" alt="Free Bootstrap Template by uicookies.com">
+                    <img src="img/nsbm_logo.png" alt="Free Bootstrap Template by fdrrhgfdghhcxfghfdchgd.com">
                   </div>
-                </div> --%>
+                </div>
                
               </div>
             </div>
@@ -298,13 +298,13 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-<<<<<<< HEAD
-              <h2 class="probootstrap-animate" data-animate-effect="fadeInRight">Get your admission now!</h2>
-              <a href="#" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate" data-animate-effect="fadeInLeft">Enroll</a>
-=======
+
+<!--              <h2 class="probootstrap-animate" data-animate-effect="fadeInRight">Get your admission now!</h2>
+              <a href="#" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate" data-animate-effect="fadeInLeft">Enroll</a>-->
+
               <h2 class="probootstrap-animate" data-animate-effect="fadeInRight">Be an Our University Partner Now !    <i class="icon-hand"></i></h2>
               <a href="../Sign up.jsp" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate" data-animate-effect="fadeInLeft"> Quickly Enroll</a>
->>>>>>> 9b911b9550db9af9531bee34a257c61cc86a21df
+
             </div>
           </div>
         </div>

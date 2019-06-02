@@ -164,7 +164,7 @@
               <div class="probootstrap-service-2 probootstrap-animate">
                 <div class="image">
                   <div class="image-bg">
-                    <img src="<%=obj_user_bean2.get_com_pic()%>" alt="Free Bootstrap Template by uicookies.com">
+                    <img src="" alt="Free Bootstrap Template by uicookies.com">
                   </div>
                 </div>
                 <div class="text">

@@ -26,10 +26,9 @@ public class set_uni_session extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet set_uni_session</title>");            
+            out.println("<title>session</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet set_uni_session at " + request.getContextPath() + "</h1>");
              out.println("<script type=\"text/javascript\">");
                  out.println("location='Univercity/index.jsp';");
                 out.println("</script>");
