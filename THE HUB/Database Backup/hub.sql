@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2019 at 08:31 PM
+-- Generation Time: Jun 03, 2019 at 12:50 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.5.38
 
@@ -137,24 +137,26 @@ INSERT INTO `scenarios` (`id`, `query_title`, `description`, `company_name`, `da
 
 DROP TABLE IF EXISTS `universities`;
 CREATE TABLE `universities` (
-  `id` int(100) NOT NULL,
+  `id` int(11) NOT NULL,
   `uni_name` varchar(200) NOT NULL,
-  `description` varchar(800) NOT NULL,
+  `description` varchar(5000) NOT NULL,
   `stud_count` int(200) NOT NULL,
   `uni_logo` varchar(50) NOT NULL,
   `uni_img_1` varchar(50) NOT NULL,
-  `uni_img_2` varchar(50) NOT NULL
+  `uni_img_2` varchar(50) NOT NULL,
+  `uni_contact_number` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `universities`
 --
 
-INSERT INTO `universities` (`id`, `uni_name`, `description`, `stud_count`, `uni_logo`, `uni_img_1`, `uni_img_2`) VALUES
-(1, 'University of Colombo', 'The University of Colombo is a public research university located primarily in Colombo, Sri Lanka. It is the oldest institution of modern higher education in Sri Lanka. Specialised in the fields of natural, social, and applied sciences as well as mathematics, computer sciences, and law', 1000, 'colombo_uni_logo.png', '', ''),
-(2, 'Nsbm Green University', 'The National School of Business Management is a private degree awarding institute in Sri Lanka, established under Companies Act No. 07 of 2007 and having company number PB 4833 and also it is the first ever green university in South Asia specialising in Computer sciences, Business, Engineering and Technology', 9000, 'nsbm_logo.png', '', ''),
-(3, 'University of Kelaniya', 'The University of Kelaniya is a state university of Sri Lanka. Just outside the municipal limits of Colombo, in the city of Kelaniya, the university has two major campuses, seven locations, six faculties and four institutions.', 8000, 'kelaniya_uni_logo.png', 'moratuwa_uni_img_1', 'moratuwa_uni_img_2'),
-(4, 'University of Moratuwa', 'The University of Moratuwa, located on the bank of the Bolgoda Lake in Katubedda, Moratuwa is the most sought after technological university in Sri Lanka.', 4000, 'moratuwa_uni_logo.png', '', '');
+INSERT INTO `universities` (`id`, `uni_name`, `description`, `stud_count`, `uni_logo`, `uni_img_1`, `uni_img_2`, `uni_contact_number`) VALUES
+(1, 'University of Colombo', 'The University of Colombo is a public research university located primarily in Colombo, Sri Lanka. It is the oldest institution of modern higher education in Sri Lanka. Specialised in the fields of natural, social, and applied sciences as well as mathematics, computer sciences, and law', 1000, 'colombo_uni_logo.png', 'colombo_uni_img_1', 'colombo_uni_img_2', '0112 581 835'),
+(2, 'Nsbm Green University', 'The National School of Business Management is a private degree awarding institute in Sri Lanka, established under Companies Act No. 07 of 2007 and having company number PB 4833 and also it is the first ever green university in South Asia specialising in Computer sciences, Business, Engineering and Technology', 9000, 'nsbm_logo.png', 'nsbm_uni_img_1', 'nsbm_uni_img_2', '0115 445 000'),
+(3, 'University of Kelaniya', 'The University of Kelaniya is a state university of Sri Lanka. Just outside the municipal limits of Colombo, in the city of Kelaniya, the university has two major campuses, seven locations, six faculties and four institutions.', 8000, 'kelaniya_uni_logo.png', 'kelaniya_uni_img_1', 'kelaniya_uni_img_2', '0112 903 903'),
+(4, 'University of Moratuwa', 'The University of Moratuwa, located on the bank of the Bolgoda Lake in Katubedda, Moratuwa is the most sought after technological university in Sri Lanka.', 4000, 'moratuwa_uni_logo.png', 'moratuwa_uni_img_1', 'moratuwa_uni_img_2', '0112 650 301'),
+(5, 'University of Peradeniya', 'The University of Peradeniya hosts nine faculties (including the newly added Management faculty), two postgraduate institutes, 10 centres, 73 departments, and teaches about 11,000 students in the fields of Medicine, Agriculture, Arts, Science, Engineering, Dental Sciences, Veterinary Medicine and Animal Science, Management and Allied Health Science.', 5600, 'Peradeniya_logo.png', 'peradeniya_uni_img_1', 'peradeniya_uni_img_2', '+94 81 238  8301');
 
 --
 -- Indexes for dumped tables
@@ -218,7 +220,7 @@ ALTER TABLE `scenarios`
 -- AUTO_INCREMENT for table `universities`
 --
 ALTER TABLE `universities`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
