@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2019 at 06:10 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Generation Time: Jun 02, 2019 at 08:31 PM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -134,31 +132,6 @@ INSERT INTO `scenarios` (`id`, `query_title`, `description`, `company_name`, `da
 -- --------------------------------------------------------
 
 --
--- Table structure for table `student_reg`
---
-
-DROP TABLE IF EXISTS `student_reg`;
-CREATE TABLE `student_reg` (
-  `id` int(10) NOT NULL,
-  `firstname` varchar(50) NOT NULL,
-  `lastname` varchar(50) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `phone` int(10) NOT NULL,
-  `faculty` varchar(50) NOT NULL,
-  `Age` int(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `student_reg`
---
-
-INSERT INTO `student_reg` (`id`, `firstname`, `lastname`, `email`, `phone`, `faculty`, `Age`) VALUES
-(1, 'Hishan', 'Abeysiriwardana', 'hishansjc@gmail.com', 713677319, 'dsagfsa', 13),
-(2, 'Hishan', 'Abeysiriwardana', 'harlyrox3333@gmail.com', 73543635, 'dsagfsa', 13);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `universities`
 --
 
@@ -167,18 +140,21 @@ CREATE TABLE `universities` (
   `id` int(100) NOT NULL,
   `uni_name` varchar(200) NOT NULL,
   `description` varchar(800) NOT NULL,
-  `stud_count` int(200) NOT NULL
+  `stud_count` int(200) NOT NULL,
+  `uni_logo` varchar(50) NOT NULL,
+  `uni_img_1` varchar(50) NOT NULL,
+  `uni_img_2` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `universities`
 --
 
-INSERT INTO `universities` (`id`, `uni_name`, `description`, `stud_count`) VALUES
-(1, 'University of Colombo', 'The University of Colombo is a public research university located primarily in Colombo, Sri Lanka. It is the oldest institution of modern higher education in Sri Lanka. Specialised in the fields of natural, social, and applied sciences as well as mathematics, computer sciences, and law', 1000),
-(2, 'Nsbm Green University', 'The National School of Business Management is a private degree awarding institute in Sri Lanka, established under Companies Act No. 07 of 2007 and having company number PB 4833 and also it is the first ever green university in South Asia specialising in Computer sciences, Business, Engineering and Technology', 9000),
-(3, 'University of Kelaniya', 'The University of Kelaniya is a state university of Sri Lanka. Just outside the municipal limits of Colombo, in the city of Kelaniya, the university has two major campuses, seven locations, six faculties and four institutions.', 8000),
-(4, 'University of Moratuwa', 'The University of Moratuwa, located on the bank of the Bolgoda Lake in Katubedda, Moratuwa is the most sought after technological university in Sri Lanka.', 4000);
+INSERT INTO `universities` (`id`, `uni_name`, `description`, `stud_count`, `uni_logo`, `uni_img_1`, `uni_img_2`) VALUES
+(1, 'University of Colombo', 'The University of Colombo is a public research university located primarily in Colombo, Sri Lanka. It is the oldest institution of modern higher education in Sri Lanka. Specialised in the fields of natural, social, and applied sciences as well as mathematics, computer sciences, and law', 1000, 'colombo_uni_logo.png', '', ''),
+(2, 'Nsbm Green University', 'The National School of Business Management is a private degree awarding institute in Sri Lanka, established under Companies Act No. 07 of 2007 and having company number PB 4833 and also it is the first ever green university in South Asia specialising in Computer sciences, Business, Engineering and Technology', 9000, 'nsbm_logo.png', '', ''),
+(3, 'University of Kelaniya', 'The University of Kelaniya is a state university of Sri Lanka. Just outside the municipal limits of Colombo, in the city of Kelaniya, the university has two major campuses, seven locations, six faculties and four institutions.', 8000, 'kelaniya_uni_logo.png', 'moratuwa_uni_img_1', 'moratuwa_uni_img_2'),
+(4, 'University of Moratuwa', 'The University of Moratuwa, located on the bank of the Bolgoda Lake in Katubedda, Moratuwa is the most sought after technological university in Sri Lanka.', 4000, 'moratuwa_uni_logo.png', '', '');
 
 --
 -- Indexes for dumped tables
@@ -209,12 +185,6 @@ ALTER TABLE `scenarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `student_reg`
---
-ALTER TABLE `student_reg`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `universities`
 --
 ALTER TABLE `universities`
@@ -229,38 +199,26 @@ ALTER TABLE `universities`
 --
 ALTER TABLE `events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
-
 --
 -- AUTO_INCREMENT for table `industries`
 --
 ALTER TABLE `industries`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
-
 --
 -- AUTO_INCREMENT for table `scenarios`
 --
 ALTER TABLE `scenarios`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `student_reg`
---
-ALTER TABLE `student_reg`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `universities`
 --
 ALTER TABLE `universities`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

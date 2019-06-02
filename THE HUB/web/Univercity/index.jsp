@@ -1,3 +1,8 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="common.uni_bean"%>
+<%@page import="java.util.List"%>
+<%@page import="CRUD.read_uni_values"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
