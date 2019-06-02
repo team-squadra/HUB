@@ -2,12 +2,14 @@
 <%@page import="common.uni_bean"%>
 <%@page import="java.util.List"%>
 <%@page import="CRUD.read_uni_values"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The Hub</title>
+    <link rel="icon" href="../images/logopng.png">
     <meta name="description" content="Free Bootstrap Theme by uicookies.com">
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
     
@@ -170,7 +172,15 @@
                   <span class="probootstrap-meta"><i class="icon-calendar2"></i> July 10, 2017</span>
                   <h3><b><%=obj_uni_bean.get_uni_name()%></b></h3>
                   <p><%=obj_uni_bean.get_discription()%></p>
-                  <p><a href="#" class="btn btn-primary">Visit Page</a> <span class="enrolled-count"><%=obj_uni_bean.get_stud_count()%> Students</span></p>
+                  <p>
+                      
+                  <form action="../set_uni_session" method="get">
+                      <input type="text"  name="uniname" value="<%=obj_uni_bean.get_uni_name()%>" style="display:none">
+                      <input type="submit" class="btn btn-primary" value="Visit Page" onclick="">
+                  </form>
+                      
+                      <span class="enrolled-count"><%=obj_uni_bean.get_stud_count()%> Students</span>
+                  </p>
                 </div>
               </div>
                  
