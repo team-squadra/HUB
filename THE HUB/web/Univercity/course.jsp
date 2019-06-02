@@ -1,3 +1,7 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="common.DB_Connection"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +13,34 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Academy - Education Course Template</title>
+    <title><%= session.getAttribute("uniname") %></title>
+    <% 
+            DB_Connection obj_DB_Connection=new DB_Connection();
+	    Connection connection=obj_DB_Connection.get_connection();
+	    PreparedStatement ps=null;
+	    ResultSet rs=null;
+        
+        try {
+	
+
+        String querry="select * from universities where uni_name ='"+session.getAttribute("uniname").toString()+"' ";
+	ps=connection.prepareStatement(querry);		
+	rs=ps.executeQuery();
+	if(rs.next()){
+
+          String uni_id =   rs.getString("id");
+          String uni_name =   rs.getString("uni_name");
+          String uni_description =   rs.getString("description");
+          String uni_stud_count =   rs.getString("stud_count");
+          String uni_logo =   rs.getString("uni_logo");
+          String uni_img_1 =   rs.getString("uni_img_1");
+          String uni_img_2 =   rs.getString("uni_img_2");
+          String uni_contact_number =   rs.getString("uni_contact_number");
+          
+        %>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="../images/logopng.png">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -127,7 +155,7 @@
                         <!-- Calling Info -->
                         <div class="calling-info">
                             <div class="call-center">
-                                <a href="tel:+654563325568889"><i class="icon-telephone-2"></i> <span>(+65) 456 332 5568 889</span></a>
+                                <a href="tel:+<%=uni_contact_number%>"><i class="icon-telephone-2"></i> <span><%=uni_contact_number%></span></a>
                             </div>
                         </div>
                     </nav>
@@ -466,4 +494,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/active.js"></script>
 </body>
 
-<.jsp>
+ <%
+            }
+        }catch (Exception e) {
+	System.out.println(e);
+	}
+        %>
+</html>

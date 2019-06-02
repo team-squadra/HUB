@@ -1,7 +1,13 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="common.uni_bean"%>
 <%@page import="java.util.List"%>
 <%@page import="CRUD.read_uni_values"%>
+<%@page import="common.DB_Connection"%>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +20,36 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>${sessionScope.uniname}</title>
+    <title><%= session.getAttribute("uniname") %></title>
+    <% 
+            DB_Connection obj_DB_Connection=new DB_Connection();
+	    Connection connection=obj_DB_Connection.get_connection();
+	    PreparedStatement ps=null;
+	    ResultSet rs=null;
+        
+        try {
+	
+
+        String querry="select * from universities where uni_name ='"+session.getAttribute("uniname").toString()+"' ";
+	ps=connection.prepareStatement(querry);		
+	rs=ps.executeQuery();
+	if(rs.next()){
+
+          String uni_id =   rs.getString("id");
+          String uni_name =   rs.getString("uni_name");
+          String uni_description =   rs.getString("description");
+          String uni_stud_count =   rs.getString("stud_count");
+          String uni_logo =   rs.getString("uni_logo");
+          String uni_img_1 =   rs.getString("uni_img_1");
+          String uni_img_2 =   rs.getString("uni_img_2");
+          String uni_contact_number =   rs.getString("uni_contact_number");
+          
+             
+	 
+	
+        %>
+
+    
 
     <!-- Favicon -->
     <link rel="icon" href="../images/logopng.png">
@@ -133,7 +168,7 @@
                         <!-- Calling Info -->
                         <div class="calling-info">
                             <div class="call-center">
-                                <a href="tel:+654563325568889"><i class="icon-telephone-2"></i> <span>(+65) 456 332 5568 889</span></a>
+                                <a href="tel:+<%=uni_contact_number%>"><i class="icon-telephone-2"></i> <span><%=uni_contact_number%></span></a>
                             </div>
                         </div>
                     </nav>
@@ -143,17 +178,22 @@
     </header>
     <!-- ##### Header Area End ##### -->
 
+              
     <!-- ##### Hero Area Start ##### -->
     <section class="hero-area">
         <div class="hero-slides owl-carousel">
 
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url(img/uni/cc/nsbm.jpg);">
+            <div class="single-hero-slide bg-img" style="background-image: url(img/uni/<%=uni_img_1%>.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
                             <div class="hero-slides-content">
                                 <h4 data-animation="fadeInUp" data-delay="100ms">All the courses you need</h4>
+                               
+
+       
+        
                                 <h2 data-animation="fadeInUp" data-delay="400ms">Wellcome to <br>${sessionScope.uniname}</h2>
                                 <a href="#" class="btn academy-btn" data-animation="fadeInUp" data-delay="700ms">Read More</a>
                             </div>
@@ -163,12 +203,13 @@
             </div>
 
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url(img/uni/cc/nsbm2.jpg);">
+            <div class="single-hero-slide bg-img" style="background-image: url(img/uni/<%=uni_img_2%>.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
                             <div class="hero-slides-content">
                                 <h4 data-animation="fadeInUp" data-delay="100ms">All the courses you need</h4>
+                                
                                 <h2 data-animation="fadeInUp" data-delay="400ms">Wellcome to <br>${sessionScope.uniname}</h2>
                                 <a href="#" class="btn academy-btn" data-animation="fadeInUp" data-delay="700ms">Read More</a>
                             </div>
@@ -176,9 +217,12 @@
                     </div>
                 </div>
             </div>
+                                
         </div>
+                 
     </section>
     <!-- ##### Hero Area End ##### -->
+   
 
     <!-- ##### Top Feature Area Start ##### -->
     <div class="top-features-area wow fadeInUp" data-wow-delay="300ms">
@@ -606,4 +650,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/active.js"></script>
 </body>
 
-<.jsp>
+ <%
+            }
+        }catch (Exception e) {
+	System.out.println(e);
+	}
+        %>
+
+</html>

@@ -1,3 +1,7 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="common.DB_Connection"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +13,34 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Academy - Education Course Template</title>
+    <title><%= session.getAttribute("uniname") %></title>
+    <% 
+            DB_Connection obj_DB_Connection=new DB_Connection();
+	    Connection connection=obj_DB_Connection.get_connection();
+	    PreparedStatement ps=null;
+	    ResultSet rs=null;
+        
+        try {
+	
+
+        String querry="select * from universities where uni_name ='"+session.getAttribute("uniname").toString()+"' ";
+	ps=connection.prepareStatement(querry);		
+	rs=ps.executeQuery();
+	if(rs.next()){
+
+          String uni_id =   rs.getString("id");
+          String uni_name =   rs.getString("uni_name");
+          String uni_description =   rs.getString("description");
+          String uni_stud_count =   rs.getString("stud_count");
+          String uni_logo =   rs.getString("uni_logo");
+          String uni_img_1 =   rs.getString("uni_img_1");
+          String uni_img_2 =   rs.getString("uni_img_2");
+          String uni_contact_number =   rs.getString("uni_contact_number");
+          
+        %>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="../images/logopng.png">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -127,7 +155,7 @@
                         <!-- Calling Info -->
                         <div class="calling-info">
                             <div class="call-center">
-                                <a href="tel:+654563325568889"><i class="icon-telephone-2"></i> <span>(+65) 456 332 5568 889</span></a>
+                               <a href="tel:+<%=uni_contact_number%>"><i class="icon-telephone-2"></i> <span><%=uni_contact_number%></span></a>
                             </div>
                         </div>
                     </nav>
@@ -163,7 +191,7 @@
                                     <div class="section-heading text-left">
                                         <span>The Best</span>
                                         <h3>Contact Us</h3>
-                                        <p class="mt-30">Lacinia, lacinia la cus non, fermen tum nisi. Donec et sollicitudin. Morbi vel arcu gravida, iaculis lacus vel, posuere ipsum. Sed faucibus mauris vitae urna consectetur, sit amet maximus nisl sagittis. Ut in iaculis enim, et pulvinar mauris.</p>
+                                        <p class="mt-30"><%=uni_description%></p>
                                     </div>
 
                                     <!-- Contact Social Info -->
@@ -189,7 +217,7 @@
                                         <div class="contact-icon mr-15">
                                             <i class="icon-telephone-1"></i>
                                         </div>
-                                        <p>Main: 203-808-8613 <br> Office: 203-808-8648</p>
+                                        <p>Main: <%=uni_contact_number%> <br> Office: <%=uni_contact_number%></p>
                                     </div>
 
                                     <!-- Single Contact Info -->
@@ -325,5 +353,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwuyLRa1uKNtbgx6xAJVmWy-zADgegA2s"></script>
     <script src="js/google-map/map-active.js"></script>
 </body>
-
-<.jsp>
+ <%
+            }
+        }catch (Exception e) {
+	System.out.println(e);
+	}
+        %>
+</html>
